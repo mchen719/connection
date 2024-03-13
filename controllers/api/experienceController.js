@@ -1,7 +1,7 @@
 // import model
 const Experience = require('../../models/experience');
 
-exports.createExperience = async (req, res) => {
+const createExperience = async (req, res) => {
   try {
     const { userId, title, company, location, startDate, endDate, description } = req.body;
     
@@ -26,7 +26,7 @@ exports.createExperience = async (req, res) => {
 };
 
 //get all experiences for a user
-exports.getExperiencesByUserId = async (req, res) => {
+const getExperiencesByUserId = async (req, res) => {
   try {
     const userId = req.params.userId;
     
@@ -40,7 +40,7 @@ exports.getExperiencesByUserId = async (req, res) => {
 };
 
 //update an existing experience
-exports.updateExperience = async (req, res) => {
+const updateExperience = async (req, res) => {
   try {
     const experienceId = req.params.id;
     const updates = req.body;
@@ -55,7 +55,7 @@ exports.updateExperience = async (req, res) => {
 };
 
 //delete an existing experience
-exports.deleteExperience = async (req, res) => {
+const deleteExperience = async (req, res) => {
   try {
     const experienceId = req.params.id;
     
@@ -67,3 +67,10 @@ exports.deleteExperience = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
+
+module.exports = {
+  createExperience,
+  getExperiencesByUserId,   
+  updateExperience,
+  deleteExperience
+}
