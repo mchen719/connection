@@ -2,17 +2,19 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const postSchema = new Schema({
-  senderId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  receiverId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  content: {
+  title: {
     type: String,
-    required: true
+    required: true,
+    trim: true
+  },
+  description: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  user: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'User' 
   },
   timestamp: {
     type: Date,
