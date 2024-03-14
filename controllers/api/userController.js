@@ -13,7 +13,7 @@ const dataController = {
   async create (req, res, next) {
     try {
       const user = await User.create(req.body)
-      console.log(req.body)
+      console.log(user)
       // token will be a string
       const token = createJWT(user)
       // send back the token as a string
@@ -40,7 +40,31 @@ const dataController = {
     } catch {
       res.status(400).json('Bad Credentials')
     }
-  }
+  },
+  async update (req, res, next) {
+    try {
+        const updates = Object.keys(req.body)
+        const user = await User.findOne({ _id: req.params.id})
+        updates.forEach(update => user[update] = req.body[update])
+        await user.save()
+        res.json(user)
+        console.log(user)
+        next()
+    } catch {
+        res.status(400).json('Bad Credentials')
+    }
+  },
+async delete (req, res) {
+    try {
+        const user = await User.findOne({ _id: req.params.id})
+        user.deleteOne()
+        res.json([{ msg: 'user deleted' }, user])
+        console.log(`${user.name} has been deleted`)
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
+  
 }
 
 const apiController = {
