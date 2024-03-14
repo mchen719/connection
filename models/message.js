@@ -1,28 +1,64 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const messageSchema = new Schema({
-  senderId: {
-    type: Schema.Types.ObjectId,
+const chatSchema = new Schema({
+  sender: {
+    type : mongoose.Schema.Types.ObjectId,
     ref: 'User'
   },
-  receiverId: {
-    type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  content: {
-    type: String,
-    required: true
-  },
-  timestamp: {
-    type: Date,
-    default: Date.now
-  }
-});
+  messages: [
+    {
+      message: String,
+      meta:
+        {
+          user : {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User'
+          },
+          delivered: Boolean,
+          read: Boolean
+        }
+    }
+  ],
+  participants: [
+    {
+      user: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
+      },
+      delivered: Boolean,
+      read: Boolean,
+    }
+  ]
+})
 
-const Message = mongoose.model('Message', messageSchema);
+const Chat = mongoose.model('Chat', chatSchema)
 
-module.exports = Message;
+module.exports = Chat
+
+// Original message schema below:
+// const messageSchema = new Schema({
+//   senderId: {
+//     type: Schema.Types.ObjectId,
+//     ref: 'User'
+//   },
+//   receiverId: {
+//     type: Schema.Types.ObjectId,
+//     ref: 'User'
+//   },
+//   content: {
+//     type: String,
+//     required: true
+//   },
+//   timestamp: {
+//     type: Date,
+//     default: Date.now
+//   }
+// });
+
+// const Message = mongoose.model('Message', messageSchema);
+
+// module.exports = Message;
 
 // JOSH NOTES. it's possible to do it this way but this is technical. This model etc is not the correct pathway to correctly get messages created and made. When someone sends a message it would go into the user's array of messages. You need to create a 'conversation' model rather than a message model. This model might work functionally but there is a LOT more setup involved / required.
 // if you want to save the chats, you DO want a model for them in database.
