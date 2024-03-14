@@ -7,12 +7,12 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn');
 router.post('/', ensureLoggedIn, educationCtrl.createEdu);
 
 // PUT /api/education/:id
-router.put(':id', ensureLoggedIn, educationCtrl.updateEdu);
+router.put('/:id', ensureLoggedIn, educationCtrl.updateEdu);
 
 // GET /api/education/:id
 router.get('/:id', educationCtrl.showEdu);
 
 // DELETE /api/education/:id
-router.get('/:id', ensureLoggedIn, educationCtrl.deleteEdu);
+router.delete('/:id', ensureLoggedIn, educationCtrl.deleteEdu);
 
 module.exports = router;
