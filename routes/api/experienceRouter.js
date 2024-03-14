@@ -8,13 +8,13 @@ const experienceController = require('../../controllers/api/experienceController
 // Define routes for handling experiences
 
 //create
-router.post('/experience', experienceController.createExperience);
+router.post('/', experienceController.createExperience);
 //get
-router.get('/experience/:userId', experienceController.getExperiencesByUserId);
+router.get('/:userId', experienceController.getExperiencesByUserId);
 //update
-router.put('/experience/:id', experienceController.updateExperience);
+router.put('/:id', experienceController.updateExperience);
 //delete
-router.delete('/experience/:id', experienceController.deleteExperience);
+router.delete('/:id', experienceController.deleteExperience);
 
 module.exports = router;
 
