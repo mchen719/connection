@@ -1,21 +1,15 @@
-const express = require('express');
-const postController = require('../../controllers/api/post');
-
-const router = express.Router();
-
-// GET /api/posts
-router.get('/', postController.getPosts);
-
-// GET /api/posts/:id
-router.get('/:id', postController.getPostById);
+const router = require('express').Router()
+const postCtrl = require('../../controllers/api/postController')
+const checkToken = require('../../config/checkToken')
+const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 // POST /api/posts
-router.post('/', postController.createPost);
+router.post('/', checkToken, ensureLoggedIn, postCtrl.createPost, postCtrl.respondWithPost); // Create
 
 // PUT /api/posts/:id
-router.put('/:id', postController.updatePost);
+router.put('/:id', checkToken, ensureLoggedIn, postCtrl.updatePost, postCtrl.respondWithPost) // Update
 
 // DELETE /api/posts/:id
-router.delete('/:id', postController.deletePost);
+router.delete('/:id', checkToken, ensureLoggedIn, postCtrl.destroyPost, postCtrl.respondWithPost) // DELETE/DESTROY 
 
-module.exports = router;
+module.exports = router
