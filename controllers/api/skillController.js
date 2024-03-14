@@ -1,11 +1,11 @@
-const skill = require('../../models/skill');
+const Skill = require('../../models/skill')
 const User = require('../../models/user')
 
 // CREATE
 const createSkill = async (req, res, next) => {
     try {
         const createdSkill = await Skill.create(req.body)
-        const user = await User.findOne({ email: res.locals.data.email })
+        const user = await User.findById({ _id: req.user._id })
         user.skills.addToSet(createdSkill)
         await user.save()
         res.locals.data.skill = createdSkill
@@ -27,7 +27,7 @@ const destroySkill = async (req, res, next) => {
 
 const updateSkill = async (req, res, next) => {
     try {
-        const updatedSkill = await Skill.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        const updatedSkill = await Skill.findOneAndUpdate({ _id: req.params.id}, req.body, { new: true })
         res.locals.data.skill = updatedSkill
         next()
     } catch (error) {
