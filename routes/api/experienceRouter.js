@@ -1,20 +1,17 @@
-// Import required modules
 const express = require('express');
 const router = express.Router();
+const { apiController } = require('../../controllers/api/userController');
+const experienceController = require('../../controllers/api/experienceController')
 
-// Import the experience controller
-const experienceController = require('../../controllers/api/experienceController');
 
-// Define routes for handling experiences
 
 //create
-router.post('/', experienceController.createExperience);
+router.post('/', apiController.auth, experienceController.createExperience);
 //get
-router.get('/:userId', experienceController.getExperiencesByUserId);
+router.get('/:userId', apiController.auth, experienceController.getExperiencesByUserId);
 //update
-router.put('/:id', experienceController.updateExperience);
+router.put('/:id', apiController.auth, experienceController.updateExperience);
 //delete
-router.delete('/:id', experienceController.deleteExperience);
+router.delete('/:id', apiController.auth, experienceController.deleteExperience);
 
 module.exports = router;
-
