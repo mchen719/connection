@@ -13,7 +13,10 @@ const educationSchema = new Schema({
   degree: String,
   fieldOfStudy: String,
   startDate: Date,
-  endDate: Date
+  description: String,
+  endDate: Date,
+  description: String
+
 });
 
 const Education = mongoose.model('Education', educationSchema);

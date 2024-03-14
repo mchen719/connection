@@ -3,7 +3,7 @@ const router = express.Router();
 const educationCtrl = require('../../controllers/api/educationController');
 const { apiController } = require('../../controllers/api/userController');
 
-// POST /api/users
+// POST /api/education
 router.post('/', apiController.auth, educationCtrl.createEdu);
 
 // PUT /api/education/:id

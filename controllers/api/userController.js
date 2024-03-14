@@ -13,7 +13,7 @@ const dataController = {
   async create (req, res, next) {
     try {
       const user = await User.create(req.body)
-      console.log(req.body)
+      console.log(user)
       // token will be a string
       const token = createJWT(user)
       // send back the token as a string
@@ -65,4 +65,3 @@ function createJWT (user) {
     { expiresIn: '24h' }
   )
 }
-
