@@ -89,4 +89,3 @@ function createJWT (user) {
     { expiresIn: '24h' }
   )
 }
-
