@@ -19,8 +19,12 @@ async function createEdu(req, res, next) {
 
 async function updateEdu(req, res) {
 	try {
-		const education = await Education.findOneAndUpdate(req.params.id);
-		res.status(200).json(education);
+		const updatedEducation = await Education.findOneAndUpdate(
+			{ _id: req.params.id },
+			req.body,
+			{ new: true }
+		);
+		res.status(200).json(updatedEducation);
 	} catch (error) {
 		res.status(400).json({ msg: error.message });
 	}
@@ -38,7 +42,7 @@ async function showEdu(req, res) {
 async function deleteEdu(req, res) {
 	try {
 		const education = await Education.findOneAndDelete(req.params.id);
-		res.status(204);
+		res.status(200).json('Education Deleted');
 	} catch (error) {
 		res.status(400).json({ msg: error.message });
 	}

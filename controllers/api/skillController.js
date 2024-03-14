@@ -1,50 +1,47 @@
-const Skill = require('../../models/skill');
+const Skill = require('../../models/skill')
+const User = require('../../models/user')
 
-// Controller function to get all skills
-const getAllSkills = async (req, res) => {
+// CREATE
+const createSkill = async (req, res, next) => {
     try {
-        const skills = await Skill.find();
-        res.json(skills);
+        const createdSkill = await Skill.create(req.body)
+        const user = await User.findById({ _id: req.user._id })
+        user.skills.addToSet(createdSkill)
+        await user.save()
+        res.locals.data.skill = createdSkill
+        next()
     } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(400).json({ msg: error.message })
     }
-};
+}
 
-const createSkill = async (req, res) => {
+const destroySkill = async (req, res, next) => {
     try {
-        const { name, level } = req.body;
-        const skill = new Skill({ name, level });
-        await skill.save();
-        res.status(201).json(skill);
+        const deletedSkill = await Skill.findByIdAndDelete(req.params.id)
+        res.locals.data.skill = deletedSkill
+        next()
     } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(400).json({ msg: error.message })
     }
-};
+}
 
-const updateSkill = async (req, res) => {
+const updateSkill = async (req, res, next) => {
     try {
-        const { id } = req.params;
-        const { name, level } = req.body;
-        const skill = await Skill.findByIdAndUpdate(id, { name, level }, { new: true });
-        res.json(skill);
+        const updatedSkill = await Skill.findOneAndUpdate({ _id: req.params.id}, req.body, { new: true })
+        res.locals.data.skill = updatedSkill
+        next()
     } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(400).json({ msg: error.message })
     }
-};
+}
 
-const deleteSkill = async (req, res) => {
-    try {
-        const { id } = req.params;
-        await Skill.findByIdAndDelete(id);
-        res.json({ message: 'Skill deleted successfully' });
-    } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
-};
+const respondWithSkill = (req, res) => {
+    res.json(res.locals.data.skill)
+}
 
 module.exports = {
-    getAllSkills,
     createSkill,
+    destroySkill,
     updateSkill,
-    deleteSkill,
-};
+    respondWithSkill
+}
