@@ -9,12 +9,7 @@ const postSchema = new Schema({
   },
   description: {
     type: String,
-    required: true,
-    trim: true
-  },
-  user: { 
-    type: Schema.Types.ObjectId, 
-    ref: 'User' 
+    required: true
   },
   timestamp: {
     type: Date,
