@@ -1,17 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { apiController } = require('../../controllers/api/userController');
-const experienceController = require('../../controllers/api/experienceController')
+const experienceController = require('../../controllers/api/experienceController');
+const { ensureLoggedIn } = require('../../config/ensureLoggedIn')
 
-
-
-//create
-router.post('/', apiController.auth, experienceController.createExperience);
-//get
-router.get('/:userId', apiController.auth, experienceController.getExperiencesByUserId);
-//update
-router.put('/:id', apiController.auth, experienceController.updateExperience);
-//delete
-router.delete('/:id', apiController.auth, experienceController.deleteExperience);
+router.post('/', ensureLoggedIn, experienceController.createExperience);
+router.get('/:userId', ensureLoggedIn, experienceController.getExperiencesByUserId);
+router.put('/:id', ensureLoggedIn, experienceController.updateExperience);
+router.delete('/:id', ensureLoggedIn, experienceController.deleteExperience);
 
 module.exports = router;
