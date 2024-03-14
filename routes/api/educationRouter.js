@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const educationCtrl = require('../../controllers/api/educationController');
-const { ensureLoggedIn } = require('../../config/ensureLoggedIn');
+const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 // POST /api/education
 router.post('/', ensureLoggedIn, educationCtrl.createEdu);
