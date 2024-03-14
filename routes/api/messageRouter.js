@@ -5,6 +5,8 @@ const ensureLoggedIn = require('../../config/ensureLoggedIn')
 const { checkToken, dataController, apiController } = require('../../controllers/api/userController')
 const messageController = require('../../controllers/api/messageController')
 
+// MAJOR issue, must confirm whether the user ID in the route has to be the LOGGED IN user or the RECEIVING user
+
 // GET /api/messages/
 router.get('/', ensureLoggedIn, messageController.getMessages, messageController.jsonMessages);
 // GET /api/messages/:userId

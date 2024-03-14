@@ -21,3 +21,9 @@ const notificationSchema = new Schema({
 const Notification = mongoose.model('Notification', notificationSchema);
 
 module.exports = Notification;
+
+// notifications can ALSO be done with sockets. notifications is mostly front-end only stuff. 'user now has notification in notification array. front end displays the notification.'
+
+// you will have to make the notification, plug it into the user's notifications array, and then check to see if it is in the array.
+
+//
