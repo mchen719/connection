@@ -1,19 +1,18 @@
 const express = require('express');
 const router = express.Router();
 const educationCtrl = require('../../controllers/api/educationController');
-const { apiController } = require('../../controllers/api/userController');
-
+const ensureLoggedIn = require('../../config/ensureLoggedIn');
 
 // POST /api/education
-router.post('/', apiController.auth, educationCtrl.createEdu);
+router.post('/', ensureLoggedIn, educationCtrl.createEdu);
 
 // PUT /api/education/:id
-router.put(':id', apiController.auth, educationCtrl.updateEdu);
+router.put('/:id', ensureLoggedIn, educationCtrl.updateEdu);
 
 // GET /api/education/:id
 router.get('/:id', educationCtrl.showEdu);
 
 // DELETE /api/education/:id
-router.get('/:id', apiController.auth, educationCtrl.deleteEdu);
+router.delete('/:id', ensureLoggedIn, educationCtrl.deleteEdu);
 
 module.exports = router;
