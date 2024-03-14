@@ -9,7 +9,7 @@ module.exports = {
 
 async function createEdu(req, res, next) {
 	try {
-		const education = await Education.findById(req.params.id);
+		const education = await Education.create(req.body);
 		res.status(200).json(education);
 	} catch (error) {
 		res.status(400).json({ msg: error.message });
