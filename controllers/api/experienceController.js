@@ -26,7 +26,7 @@ const createExperience = async (req, res) => {
 };
 
 //get all experiences for a user
-const getExperiencesByUserId = async (req, res) => {
+const getExperiencesByUserId = async (req, res, next) => {
   try {
     const userId = req.params.userId;
     
@@ -34,35 +34,33 @@ const getExperiencesByUserId = async (req, res) => {
     const experiences = await Experience.find({ userId });
 
     res.status(200).json(experiences);
+    next()
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
+
 //update an existing experience
-const updateExperience = async (req, res) => {
-  try {
-    const experienceId = req.params.id;
-    const updates = req.body;
-
-    // Update the experience with the provided id
-    const updatedExperience = await Experience.findByIdAndUpdate(experienceId, updates, { new: true });
-
-    res.status(200).json(updatedExperience);
-  } catch (error) {
-    res.status(400).json({ message: error.message });
-  }
-};
+const updateExperience = async (req, res, next) => {
+    try {
+      console.log(req.params.id, req.user._id, req.body)
+      const experience = await Experience.findByIdAndUpdate(req.params.id, req.body, { new:true })
+      console.log(experience)
+      res.status(200).json(experience)
+      next()
+    } catch (error) {
+      res.status(400).json({ message: error.message });
+    }
+  };
+  
 
 //delete an existing experience
-const deleteExperience = async (req, res) => {
+const deleteExperience = async (req, res, next) => {
   try {
-    const experienceId = req.params.id;
-    
-    // Delete the experience with the provided id
-    await Experience.findByIdAndDelete(experienceId);
-
-    res.status(200).send();
+    const experience = await Experience.findByIdAndDelete({_id : req.params.id, user: req.user._id})
+    res.status(200).json(experience)
+    next()
   } catch (error) {
     res.status(400).json({ message: error.message });
   }
