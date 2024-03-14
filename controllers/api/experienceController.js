@@ -40,25 +40,15 @@ const getExperiencesByUserId = async (req, res, next) => {
   }
 };
 
+
 //update an existing experience
 const updateExperience = async (req, res, next) => {
     try {
-      const experienceId = req.params.id;
-      const updates = req.body;
-  
-      // Find the experience by ID
-      const experience = await Experience.findById(experienceId);
-  
-      // Update the experience fields based on the request body
-      Object.keys(updates).forEach(update => {
-        experience[update] = updates[update];
-      });
-  
-      // Save the updated experience
-      await experience.save();
-  
-      res.status(200).json(experience);
-      next();
+      console.log(req.params.id, req.user._id, req.body)
+      const experience = await Experience.findByIdAndUpdate(req.params.id, req.body, { new:true })
+      console.log(experience)
+      res.status(200).json(experience)
+      next()
     } catch (error) {
       res.status(400).json({ message: error.message });
     }
@@ -68,12 +58,8 @@ const updateExperience = async (req, res, next) => {
 //delete an existing experience
 const deleteExperience = async (req, res, next) => {
   try {
-    const experienceId = req.params.id;
-    
-    // Delete the experience with the provided id
-    await Experience.findByIdAndDelete(experienceId);
-
-    res.status(200).send();
+    const experience = await Experience.findByIdAndDelete({_id : req.params.id, user: req.user._id})
+    res.status(200).json(experience)
     next()
   } catch (error) {
     res.status(400).json({ message: error.message });

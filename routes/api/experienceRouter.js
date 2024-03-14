@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const experienceController = require('../../controllers/api/experienceController');
-const { ensureLoggedIn } = require('../../config/ensureLoggedIn')
+const ensureLoggedIn  = require('../../config/ensureLoggedIn')
 
 router.post('/', ensureLoggedIn, experienceController.createExperience);
 router.get('/:userId', ensureLoggedIn, experienceController.getExperiencesByUserId);
