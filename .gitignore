@@ -2,4 +2,8 @@ node_modules/
 .env
 package-lock.json
 public/js
+<<<<<<< HEAD
+public/index.html 
+=======
 public/index.html
+>>>>>>> 235172b9e8eaeb1db6d5a99f8b333be2ab936780
