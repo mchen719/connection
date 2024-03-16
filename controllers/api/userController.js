@@ -49,7 +49,6 @@ const dataController = {
         await user.save()
         res.json(user)
         console.log(user)
-        next()
     } catch {
         res.status(400).json('Bad Credentials')
     }

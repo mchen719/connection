@@ -8,3 +8,7 @@ export function signUp(userData) {
 export function login(credentials) {
     return sendrequest(`${BASE_URL}/login`, 'POST', credentials)
 }
+
+export function update(data, id) {
+    return sendrequest(`${BASE_URL}/${id}`, 'PUT', data)
+}

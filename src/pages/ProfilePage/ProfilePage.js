@@ -15,6 +15,7 @@ import * as skillAPI from '../../utilities/skill-api'
 import * as usersAPI from '../../utilities/users-api'
 import styles from './ProfilePage.module.scss'
 import UserLogout from '../../components/UserLogout/UserLogout'
+import UserUpdate from '../../components/UserEdit/UserEdit'
 
 export default function ProfilePage({ user, setUser }) {
     return (
@@ -24,6 +25,7 @@ export default function ProfilePage({ user, setUser }) {
             <AboutMe />
             <ProDetails />
             <UserLogout user={user} setUser={setUser} />
+            <UserUpdate user={user} setUser={setUser}/>
         </main>
     )
 }
