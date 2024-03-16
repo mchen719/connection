@@ -9,10 +9,10 @@ export default function AuthPage({ setUser }) {
 
   return (
     <main className={styles.AuthPage}>
+      {showLogin ? <Login setUser={setUser} /> : <SignUp setUser={setUser} />}
       <div>
         <button className={styles.h3}onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGN UP' : 'LOG IN'}</button>
       </div>
-      {showLogin ? <Login setUser={setUser} /> : <SignUp setUser={setUser} />}
     </main>
   );
 }
