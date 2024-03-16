@@ -1,77 +1,48 @@
 const Post = require('../../models/post');
+const User = require('../../models/user')
 
 // CREATE
-const createPost = async function (req, res) {
+const createPost = async (req, res, next) => {
     try {
-        const { title, content } = req.body;
-        const newPost = new Post({ title, content });
-        await newPost.save();
-        res.status(201).json(newPost);
+        const createdPost = await Post.create(req.body)
+        const user = await User.findById({ _id: req.user._id })
+        user.posts.addToSet(createdPost)
+        await user.save()
+        console.log(user)
+        res.locals.data.post = createdPost
+        next()
     } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
-};
-
-// UPDATE
-const updatePost = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const { title, content } = req.body;
-        const updatedPost = await Post.findByIdAndUpdate(id, { title, content }, { new: true });
-        if (!updatedPost) {
-            return res.status(404).json({ error: 'Post not found' });
-        }
-        res.status(200).json(updatedPost);
-    } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
-};
-
-// DESTROY
-const deletePost = async (req, res) => {
-    try {
-        const { id } = req.params;
-        const deletedPost = await Post.findByIdAndDelete(id);
-        if (!deletedPost) {
-            return res.status(404).json({ error: 'Post not found' });
-        }
-        res.status(200).json({ message: 'Post deleted successfully' });
-    } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
-    }
-};
-
-// SHOW
-const getPosts = async (req, res) => {
-    try {
-        const posts = await Post.find();
-        res.status(200).json(posts);
-    } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(400).json({ msg: error.message })
     }
 }
 
-// READ
-const getPostById = async (req, res) => {
+const destroyPost = async (req, res, next) => {
     try {
-        const { id } = req.params;
-        const post = await Post.findById(id);
-        if (!post) {
-            return res.status(404).json({ error: 'Post not found' });
-        }
-        res.status(200).json(post);
+        const deletedPost = await Post.findByIdAndDelete(req.params.id)
+        res.locals.data.post = deletedPost
+        next()
     } catch (error) {
-        res.status(500).json({ error: 'Internal server error' });
+        res.status(400).json({ msg: error.message })
     }
-};
+}
 
+const updatePost = async (req, res, next) => {
+    try {
+        const updatedPost = await Post.findOneAndUpdate({ _id: req.params.id}, req.body, { new: true })
+        res.locals.data.post = updatedPost
+        next()
+    } catch (error) {
+        res.status(400).json({ msg: error.message })
+    }
+}
 
-const postController = {
+const respondWithPost = (req, res) => {
+    res.json(res.locals.data.post)
+}
+
+module.exports = {
     createPost,
+    destroyPost,
     updatePost,
-    deletePost,
-    getPosts,
-    getPostById,
-};
-
-module.exports = postController;
+    respondWithPost
+}

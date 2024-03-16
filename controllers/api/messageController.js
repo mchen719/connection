@@ -49,14 +49,14 @@ async function getUserMessages(req, res, next) {
     }
 }
 
-async function sendMessage(req, res, next) {
+async function sendMessage(req, res) {
     try {
         req.body.user = req.user._id
         const message = await Message.create(req.body)
         req.user.messages.addToSet(message)
         req.user.save()
         res.locals.data.message = message
-        next()
+
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
