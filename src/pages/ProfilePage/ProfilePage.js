@@ -16,15 +16,16 @@ import * as usersAPI from '../../utilities/users-api'
 import styles from './ProfilePage.module.scss'
 import UserLogout from '../../components/UserLogout/UserLogout'
 
-export default function ProfilePage({ user, setUser }) {
+export default function ProfilePage( user, setUser ) {
     return (
         <main className={styles.ProfilePage}>
             <div>PROFILE PLACEHOLDER!!!</div>
-            <NavBar />
+			<NavBar
+				user={user}
+				setUser={setUser}
+			/>
             <AboutMe />
             <ProDetails />
-            <UserLogout user={user} setUser={setUser} />
         </main>
     )
 }
-
