@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 // import React, { useEffect, useState } from 'react';
 // import { useParams } from 'react-router-dom'; // Import useParams
 
 // const JobPage = () => {
 //   const { jobId } = useParams(); // Access the jobId parameter from the URL
 //   const [job, setJob] = useState(null); // State to store the job data
-=======
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams
 import NavBar from '../../components/NavBar/NavBar';
@@ -13,7 +11,6 @@ import NavBar from '../../components/NavBar/NavBar';
 const JobPage = ({user, setUser}) => {
   const { jobId } = useParams(); // Access the jobId parameter from the URL
   const [job, setJob] = useState(null); // State to store the job data
->>>>>>> d2628f283e89983d3bcde86e543d8257310b353e
 
 //   useEffect(() => {
 //     // Fetch the job data based on jobId when the component mounts
@@ -30,7 +27,7 @@ const JobPage = ({user, setUser}) => {
 //       }
 //     };
 
-<<<<<<< HEAD
+
 //     fetchJob(); // Call the fetchJob function
 //   }, [jobId]); // Dependency array ensures useEffect runs only when jobId changes
 
@@ -55,7 +52,7 @@ const JobPage = ({user, setUser}) => {
 //     </div>
 //   );
 // };
-=======
+
     // fetchJob(); // Call the fetchJob function
   }, [jobId]); // Dependency array ensures useEffect runs only when jobId changes
 
@@ -81,7 +78,6 @@ const JobPage = ({user, setUser}) => {
     </div>
   );
 };
->>>>>>> d2628f283e89983d3bcde86e543d8257310b353e
 
 export default JobPage;
 
