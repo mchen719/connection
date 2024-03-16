@@ -1,16 +1,9 @@
-function PostFeed() {
-  return (
-    <>
-        <div className="PostFeed">
-            <div className="feed__inputContainer">
-                <div className="feed__input">
-                    <CreateIcon />
-                </div>
-            </div>
-        </div>
-    
-    </>
-  )
-}
+import styles from './PostFeed.module.scss';
 
-export default PostFeed
+export default function PostFeed({}) {
+	return (
+		<div>
+			<h1>Post Feed</h1>
+		</div>
+	);
+}

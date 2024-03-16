@@ -3,7 +3,7 @@ import routes from './routes';
 import { useState } from 'react'
 import styles from './AppRouter.module.scss';
 import { getUser } from '../utilities/users-service';
-// import AuthPage from '../pages/AuthPage/AuthPage';
+import AuthPage from '../pages/AuthPage/AuthPage';
 // import ProfilePage from '../pages/ProfilePage/ProfilePage'
 // import HomePage from '../pages/HomePage/HomePage'
 // import JobPage from '../pages/JobPage/JobPage'
@@ -17,7 +17,7 @@ const AppRouter = () => {
 			<main className={styles.App}>
 
 			<>
-			{/*user ?*/}
+			{user ?
 
 			<Routes>
 				{routes.map(({ Component, key, path }) => (
@@ -35,10 +35,11 @@ const AppRouter = () => {
 				))}
 				<Route path='/*' element={<Navigate to="/home"/>}/>
 			</Routes>
-						{/* :*/}
-
+				:
+				<AuthPage setUser={setUser}/>
+				}
 			</>
-			<h1>AUTH PAGE PLACEHOLDER</h1>
+			
 
 			</main>
 		</Router>
