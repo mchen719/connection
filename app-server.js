@@ -13,7 +13,7 @@ app.use((req, res, next) => {
 })
 
 app.use(logger('dev'))
-app.use(favicon(path.join(__dirname, 'public', 'img','logo.png')))
+app.use(favicon(path.join(__dirname, 'public', 'img', 'companyLogo.jpg')))
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(checkToken)
 app.use('/api/users', require('./routes/api/userRouter'))
