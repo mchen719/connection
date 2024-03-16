@@ -29,7 +29,7 @@
 //                 title: '',
 //                 completed: false
 //             })
-//         } catch (error) {   
+//         } catch (error) {
 //             console.error(error)
 //         }
 //     }
@@ -57,7 +57,7 @@
 //             const index = todos.findIndex((todo) => todo._id === id)
 //             const todosCopy = [...todos]
 //             const subject = todosCopy[index]
-//             subject.completed = true 
+//             subject.completed = true
 //             const response = await fetch(`/api/todos/${id}`, {
 //                 method: 'PUT',
 //                 headers: {
@@ -93,7 +93,7 @@
 //     }, [])
 //     return(
 //         <>
-			
+
 //             <div className={styles.banner}>
 //                 <h1>The World Famous Big Poppa Code React Starter Kit</h1>
 //               <img src='https://i.imgur.com/5WXigZL.jpg'/>
@@ -111,7 +111,10 @@
 //     )
 // }
 
- export default function App() {
-    return <h1>This is the app</h1>
-}
+import NavBar from "./components/NavBar/NavBar"
 
+ export default function App() {
+    return (
+    <h1>This is the app</h1>
+    )
+}

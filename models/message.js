@@ -70,3 +70,14 @@ module.exports = Chat
 // you can put the message model above directly into message schema
 // I think it'd be easier to create schema but not model. Create schema for a chat. ONLY model made is for the Conversation/chat, not an individual message
 // worry about EVERY INDIVIDUAL message / convo at a later time.
+
+
+/*
+example of how to find and serve the existing chat thread. below concept hunts for chat based on you the querent and your buddy's IDs, sorts by the last starting first, and shows the most recent 20:
+ Chat.find(({ users: { req.user._id, Chat.user._id })
+    .sort({ updatedAt: -1 })
+    .limit(20)
+
+    things we may need for socket io to work : cors socket.io
+    must also create a client folder? socket.io-client is the necessary socket extension for client. TWO ports
+*/
