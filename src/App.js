@@ -1,18 +1,27 @@
 import { useState } from 'react'; 
-import Login from '../src/components/Login/Login';
-import SignUp from '../src/components/SignUp/SignUp';
+import AuthPage from '../src/pages/AuthPage/AuthPage'
+import ProfilePage from './pages/ProfilePage/ProfilePage';
+import { getUser } from '../src/utilities/users-service';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
 
- export default function App({ setUser }) {
-    const [showLogin, setShowLogin] = useState();
+
+ export default function App() {
+    const [user, setUser] = useState(getUser());
     return (
-
-    <>
-      <>
-        <button onClick={() => setShowLogin(!showLogin)}>{showLogin ? 'SIGN UP' : 'LOG IN'}</button>
-      </>
-      {showLogin ? <Login setUser={setUser} /> : <SignUp setUser={setUser} />}
-    </>
+        <>
+        { user ?
+            <>
+              <Routes>
+                <Route path="/profile" element={<ProfilePage user={user} setUser={setUser} />} />
+                <Route path="/*" element={<Navigate to="/profile" />} />
+    
+              </Routes>
+            </>
+            :
+            <AuthPage setUser={setUser} />
+          }
+        </>
   );
 }
 
