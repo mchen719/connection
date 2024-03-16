@@ -45,4 +45,9 @@
 //   );
 // };
 
+<<<<<<< HEAD
 // export default JobPage;
+=======
+export default JobPage;
+
+>>>>>>> f6cba9e478265dcac5ff260d7da9e7a572b988f2

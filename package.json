@@ -8,6 +8,7 @@
   "main": "server.js",
   "scripts": {
     "seed": "node config/seed.js",
+    "seedDeleter": "node config/seedDeleter.js",
     "test": "jest",
     "build": "gulp build && gulp styles",
     "dev:webpack": "webpack --mode development --define-process-env-node-env dev",
