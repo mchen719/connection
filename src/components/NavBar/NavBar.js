@@ -1,11 +1,19 @@
-import styles from './NavBar.module.scss';
-import Logo from '../Logo/Logo.js';
+import styles from './NavBar.module.scss'
+import { Link, useNavigate } from 'react-router-dom';
+import Logo from '../Logo/Logo'
 
-export default function NavBar({}) {
+export default function NavBar() {
 	return (
-		<div>
-			<Logo />
-			<h1>Nav Bar</h1>
-		</div>
-	);
+		<nav className={styles.NavBar}>
+      <div className={styles.logo}>
+         <Logo />
+      </div>
+			<button className={styles.navButtons}>
+			<Link to="" className={styles.NavButton}>Home/Feed</Link>
+			<Link to="" className={styles.NavButton}>Profile Page</Link>
+			<Link to="" className={styles.NavButton}>Job Listings</Link>
+			</button>
+
+		</nav>
+	)
 }
