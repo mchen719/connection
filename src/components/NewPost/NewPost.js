@@ -1,9 +1,11 @@
-import React from 'react'
+import styles from './NewPost.module.scss';
 
-function NewPost() {
-  return (
-    <div>NewPost</div>
-  )
+export default function NewPost({}) {
+	return (
+		<div>
+			<h1>New Posts</h1>
+		</div>
+	);
 }
 
-export default NewPost
+
