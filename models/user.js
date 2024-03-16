@@ -26,7 +26,7 @@ const userSchema = new Schema({
   education: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Education'}],
   skills: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Skill'}],
   notifications: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Notification'}],
-  messages: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Message'}],
+  messages: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Chat'}],
   posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],
 
 
