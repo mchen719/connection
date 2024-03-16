@@ -16,7 +16,7 @@ export default function HomePage( user, setUser ) {
 			<div className="mainPage">
 				<div>
 					<NewPost />
-
+                        
 					<PostFeed />
 				</div>
 
