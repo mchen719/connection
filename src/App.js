@@ -3,13 +3,13 @@ import AuthPage from '../src/pages/AuthPage/AuthPage'
 import ProfilePage from './pages/ProfilePage/ProfilePage';
 import { getUser } from '../src/utilities/users-service';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import NavBar from "./components/NavBar/NavBar"
 
+export default function App() {
 
-
- export default function App() {
-    const [user, setUser] = useState(getUser());
-    return (
-        <>
+   const [user, setUser] = useState(getUser());
+   return (
+       <>
         { user ?
             <>
               <Routes>
@@ -24,5 +24,4 @@ import { Routes, Route, Navigate } from 'react-router-dom';
         </>
   );
 }
-
 
