@@ -17,6 +17,28 @@ function jsonNotifications (_, res) {
     res.json(res.locals.data.notifications)
 }
 
+// CREATE notifications path must still exist. it can be an automated process but it must still exist within the database. the user causes this to happen unwittingly.
+
+// notifications should be saved in the backend. BUT temporary banners are front end only. real notifications are saved in backend.
+/*
+    to streamline. user posts comment. There must be a conditional statement on act of the user that declares the id of the acting user and the id of the receiving user and the action executed.
+
+    you can add a prop to a user model or a status code to create this conditional, or an http request.
+
+    LONG way is hard coding each controller of relevance to have a conditional json return statement.
+
+    *** MIDDLEWARE for different kinds of notifications. --> rather than its own, we put a 'add notification' middleware to the routes themselves . post, comment, like, etc. streamline the process in this manner.
+
+    loggedin user. access to current logged in user.  Needs access to other person. This is acquired FROM that route.
+
+    req.user._id , action -->long chain of if/else statements for behavior types.   , user 2._id --> the post id is connected to a user. you access the post you access the user. query to find user by post id. post.user name.user   you get it from the .user . .
+
+    create a DIFFERENT middleware file for each specific set of routes. "middle ware is always very specific because they get slapped onto very specific routes. the middleware must in turn be small in scope."
+
+    {  User 1 , action , user  2 }
+
+*/
+
 
 // below: potentially replace _ with req.
 async function getNotifications(_, res, next) {

@@ -10,9 +10,9 @@ router.post('/', dataController.create, apiController.auth)
 // POST /api/users/login
 router.post('/login', dataController.login, apiController.auth)
 // PUT /api/users/:id
-router.put('/:id', dataController.update, apiController.auth)
+router.put('/:id', ensureLoggedIn, dataController.update)
 // DELETE /api/users/:id
-router.delete('/:id', dataController.delete, apiController.auth)
+router.delete('/:id', ensureLoggedIn, dataController.delete)
 
 // GET /api/users/check-token
 router.get('/check-token', ensureLoggedIn, checkToken)
