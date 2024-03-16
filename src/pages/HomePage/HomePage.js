@@ -4,7 +4,7 @@ import PostFeed from '../../components/PostFeed/PostFeed.js';
 import NewPost from '../../components/NewPost/NewPost.js';
 import SideBar from '../../components/SideBar/SideBar.js';
 
-export default function HomePage( user, setUser ) {
+export default function HomePage({ user, setUser }) {
 	return (
 		<>
 		<h1>TEST HOMEPAGE TEXT </h1>

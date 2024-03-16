@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; // Import useParams
+import NavBar from '../../components/NavBar/NavBar';
 
-const JobPage = () => {
+const JobPage = ({user, setUser}) => {
   const { jobId } = useParams(); // Access the jobId parameter from the URL
   const [job, setJob] = useState(null); // State to store the job data
 
@@ -20,11 +21,12 @@ const JobPage = () => {
       }
     };
 
-    fetchJob(); // Call the fetchJob function
+    // fetchJob(); // Call the fetchJob function
   }, [jobId]); // Dependency array ensures useEffect runs only when jobId changes
 
   return (
     <div>
+      <NavBar user={user} setUser={setUser}/> 
       <h1>Job Details</h1>
       {job ? (
         <div>
