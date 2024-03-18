@@ -39,7 +39,7 @@ const AppRouter = () => {
 				<AuthPage setUser={setUser}/>
 				}
 			</>
-			
+
 
 			</main>
 		</Router>

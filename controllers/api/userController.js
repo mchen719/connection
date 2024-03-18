@@ -29,16 +29,19 @@ const dataController = {
     }
   },
   async login (req, res, next) {
+    console.log("HELP")
     try {
-      const user = await User.findOne({ email: req.body.email })
-      if (!user) throw new Error()
+      const user = await User.findOne({ email: req.body.email }).populate("experience education skills posts")
+      console.log(user)
+      if (!user) throw new Error("CANNOT FIND USER")
+      console.log("NEW ERROR")
       const match = await bcrypt.compare(req.body.password, user.password)
-      if (!match) throw new Error()
+      if (!match) throw new Error("UNABLE TO MATCH PASSWORD")
       res.locals.data.user = user
       res.locals.data.token = createJWT(user)
       next()
-    } catch {
-      res.status(400).json('Bad Credentials')
+    } catch (error) {
+      res.status(400).json({msg: error.message })
     }
   },
   async update (req, res, next) {
@@ -63,7 +66,7 @@ async delete (req, res) {
         res.status(400).json({ msg: error.message })
     }
 }
-  
+
 }
 
 const apiController = {

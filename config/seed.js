@@ -4,6 +4,8 @@
 
 // we must continue tweaking accordingly as our needs evolve. BE WARY. the for loops must be individually updated for each model alteration.
 
+// Must inject your chosen password into the env file you have. Key: SEED_PASSWORD=    value: whatever password you want.
+
 
 require('dotenv').config()
 require('./database')
@@ -16,6 +18,7 @@ const Notification = require('../models/notification')
 const Post = require('../models/post')
 const Skill = require('../models/skill')
 const User = require('../models/user')
+const Job = require('../models/job')
 
 const seed = async () => {
     await User.deleteMany({})
@@ -24,6 +27,8 @@ const seed = async () => {
             name: "Test User1",
             email: "testUser@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture1.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
             skills: [],
@@ -36,6 +41,8 @@ const seed = async () => {
             name: "Test2 User2",
             email: "testUser2@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture3.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
             skills: [],
@@ -47,6 +54,8 @@ const seed = async () => {
             name: "Test3 User3",
             email: "testUser3@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture4.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
             skills: [],
@@ -59,6 +68,8 @@ const seed = async () => {
             name: "Test4 User4",
             email: "testUser4@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture1.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
             skills: [],
@@ -71,6 +82,8 @@ const seed = async () => {
             name: "Test5 User5",
             email: "testUser5@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture2.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
             skills: [],
@@ -83,6 +96,7 @@ const seed = async () => {
             name: "Test6 User6",
             email: "testUser6@email.com",
             password: process.env.SEED_PASSWORD,
+            coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
             skills: [],
@@ -95,6 +109,7 @@ const seed = async () => {
             name: "Test7 User7",
             email: "testUser7@email.com",
             password: process.env.SEED_PASSWORD,
+            coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
             skills: [],
@@ -460,6 +475,108 @@ const seed = async () => {
     for (let i = 0; i < 5; i++) {
         await usersSeed[i].save()
     }
+
+    await Job.deleteMany({})
+    const jobSeed = await Job.create([
+        {
+            title: "Full Stack Developer",
+            company: "Start-Ups Today!",
+            location: "San Francisco, CA",
+            description: "We're a trio of twenty-two year old founders with lofty ambitions of spending all our hedge fund money on the next ego-vanity project you can think of! We're a family here, that means extra hours for no extra pay and no bonuses forever.",
+            requirements: ["Ten Years' Full Stack Development", "Microsoft Office", "Git", "Excessive Experience in an Obscure Programming Framework You've Never Heard Of"],
+            createdAt: new Date('March 17 2024 17:22:02')
+        },
+        {
+            title: "Legal Defense Counsel",
+            company: "MaceRich",
+            location: "New York, NY",
+            description: "Corporate Conglomerate seeking senior law staff for general on-call defense purposes. Must be willing to oppress the little guy.",
+            requirements: ["Twelve+ Years' Experience in Tax Law", "Nine+ Years' Experience in a Corporate Finance Environment", "Proven Track Record of Successful Legal Defenses", "a Can-Do Attitude!"],
+            createdAt: new Date('March 10 2024 17:09:49')
+        },
+        {
+            title: "Head Accountant",
+            company: "Number Crunchers",
+            location: "Atlanta, GA",
+            description: "Do you love numbers? Do you love money?! Do you want to work in an environment that does nothing but play with both?! Welcome to the team, Mr. Suit and Tie Accountant!",
+            requirements: ["Ten Years' Experience in an Accounting Software", "Must be Willing to Relocate to Georgia", "Excessive Attention to Detail a Must"],
+            createdAt: new Date('March 10 2024 21:28:59')
+        },
+        {
+            title: "Junior Back-End Engineer",
+            company: "Witty Titles Incorporated",
+            location: "Los Angeles, CA",
+            description: "Seeking an experienced developer to join us at the bottom rung to help scale up something great! Please note that while this is an entry-level role offering entry-level pay, we will only accept senior-level applicants at this time. Salary non-negotiable.",
+            requirements: ["MERN-stack and Back-End developing Experience", "Microsoft Office", "Git", "Heavy Python Experience Required"],
+            createdAt: new Date('March 14 2024 22:23:16')
+        },
+        {
+            title: "Account Executive",
+            company: "Salesmen United",
+            location: "New York, NY",
+            description: "Is selling in your blood? Do you wake up sweating over deals you haven't closed yet? Come join the team! No product too obscure and no service too unnecessary is our motto, let's make some money people!",
+            requirements: ["Three+ Years' Sales Experience in a High-Volume Environment", "Five+ Years' Experience in a Customer-Facing Setting", "Willingness to travel 95% of the Time"],
+            createdAt: new Date('March 15 2024 23:33:44')
+        },
+        {
+            title: "Immigration Lawyer",
+            company: "Next Generation American",
+            location: "Toronto, CA",
+            description: "At Next Generation American, we care about people. We want them to have the same chance at the American Dream as everyone else. Come join us as we help ensure people's liberties are preserved in this great country.",
+            requirements: ["Fluency in a Second Language", "Five+ Years' Successful Litigation Experience in a Court of Immigration Law", "Tireless Empathy"],
+            createdAt: new Date('March 15 2024 09:02:10')
+        },
+        {
+            title: "Head Chef",
+            company: "Marrriot Hotels",
+            location: "Chicago, IL",
+            description: "Do you love food? Do you love cooking it? Come take charge in the kitchens of our newest expansion! Great Perks!",
+            requirements: ["Nine+ Years' Experience as an Executive Chef", "Proficiency in Spanish", "Must Be a Chain Smoker to Excel in this Role"],
+            createdAt: new Date('March 14 2024 22:05:11')
+        },
+        {
+            title: "Quality Assurance Tester",
+            company: "Witty Titles Incorporated",
+            location: "Remote",
+            description: "Startup company seeking part-time QA tester with serious XP in the testing game. We like to push horrendous bugs to our code and call it good; that's why we're hiring you!",
+            requirements: ["Thirty Five Years' Experience in Unit Testing", "Can-Do Attitude", "Team-Player", "Must be Proficient in Javascript"],
+            createdAt: new Date('March 10 2024 08:06:35')
+        },
+        {
+            title: "Paralegal",
+            company: "Dumas and Dumas",
+            location: "New York, NY",
+            description: "Only a Dumas can work with a Dumas! Here at Dumas and Dumas, we're a family firm dedicating to small-claims cases. You will excel in this role if you've ever worked with a Dumas and know the way that we Dumases like to communicate.",
+            requirements: ["Microsoft Office", "Neurotic Attention to Detail", "Ten Years' Experience in Legal Documentation"],
+            createdAt: new Date('March 13 2024 22:23:12')
+        },
+        {
+            title: "Call Center Representative",
+            company: "Scammers 911",
+            location: "Remote",
+            description: "No Experience Required! We'll train you in everything you know! Experienced applicants only, please.",
+            requirements: ["Experience in a Customer-Support Environment", "Patience and Empathy", "Charming Demeanor"],
+            createdAt: new Date('March 16 2024 10:11:12')
+        },
+        {
+            title: "Front-End Dev",
+            company: "Yeet Unlimited",
+            location: "Los Angeles, CA",
+            description: "We're a parkour gym looking to style it up on the interwebs with some dope website pages. Help us out?",
+            requirements: ["REACT or similar front-end frameworks", "Experience Working in a Deadline Driven Environment", "Love of the Thrill."],
+            createdBy: usersSeed[0]._id,
+            createdAt: new Date('March 15 2024 22:10:12')
+        },
+        {
+            title: "Parkour Specialist",
+            company: "Yeet Unlimited",
+            location: "Los Angeles, CA",
+            description: "For the thrill seekers seeking to make a buck for their thrills. Join us as we host private events and entertainment vnenues!",
+            requirements: ["Physical Fitness", "Microsoft Office", "Five Years Urban Exploration Experience"],
+            createdBy: usersSeed[0]._id,
+            createdAt: new Date('March 12 2024 11:42:12')
+        }
+    ])
 
     process.exit()
 }
