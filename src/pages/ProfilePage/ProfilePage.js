@@ -6,7 +6,7 @@ import AboutMe from '../../components/AboutMe/AboutMe'
 import NavBar from '../../components/NavBar/NavBar'
 // import NotificationsList from '../../components/NotificationsList/NotificationsList
 import ProDetails from '../../components/ProDetails/ProDetails'
-// import SearchBar from '../../SearchBar/SearchBar
+// import SearchBar from '../../components/SearchBar/SearchBar'
 
 import * as educationAPI from '../../utilities/education-api'
 import * as experienceAPI from '../../utilities/experience-api'
@@ -15,13 +15,14 @@ import * as usersAPI from '../../utilities/users-api'
 import styles from './ProfilePage.module.scss'
 
 export default function ProfilePage({ user, setUser }) {
+    const [searchInput, setSearchInput] = useState("")
     return (
         <main className={styles.ProfilePage}>
-            <div>PROFILE PLACEHOLDER!!!</div>
             <NavBar
                 user={user}
                 setUser={setUser}
             />
+            {/* <SearchBar /> */}
             <AboutMe
                 user={user}
                 setUser={setUser}

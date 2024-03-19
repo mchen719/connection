@@ -7,7 +7,7 @@ export default function UserSkillsItem({userSkillsItem}){
         <div className={styles.UserSkillsItem}>
             <div>
                 <span>{userSkillsItem.name}</span>
-                <span>{userSkillsItem.endorsements}</span>
+                <span>, Endorsement Count: {userSkillsItem.endorsements}</span>
             </div>
         </div>
     )

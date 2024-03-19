@@ -41,7 +41,7 @@ const seed = async () => {
             name: "Test2 User2",
             email: "testUser2@email.com",
             password: process.env.SEED_PASSWORD,
-            profilePicture: '/img/profilePicture3.jpeg',
+            profilePicture: '/img/profilePicture3.png',
             coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
@@ -51,8 +51,8 @@ const seed = async () => {
             posts: []
         },
         {
-            name: "Test3 User3",
-            email: "testUser3@email.com",
+            name: "Arthur Clone",
+            email: "ceo@me.com",
             password: process.env.SEED_PASSWORD,
             profilePicture: '/img/profilePicture4.jpeg',
             coverPhoto: '/img/CoverPicture.jpg',
@@ -65,10 +65,10 @@ const seed = async () => {
 
         },
         {
-            name: "Test4 User4",
-            email: "testUser4@email.com",
+            name: "Best Tester",
+            email: "besttest@email.com",
             password: process.env.SEED_PASSWORD,
-            profilePicture: '/img/profilePicture1.jpeg',
+            profilePicture: '/img/profilePicture5.jpeg',
             coverPhoto: '/img/CoverPicture.jpg',
             experience: [],
             education: [],
