@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './UserLogOut.module.scss';
 import { logOut } from '../../utilities/users-service';
 
-function UserLogout({user, setUser }) {
+function UserLogout({ user, setUser }) {
     function handleLogOut() {
         logOut();
         setUser(null);
