@@ -13,9 +13,29 @@ import * as experienceAPI from '../../utilities/experience-api'
 import * as skillAPI from '../../utilities/skill-api'
 import * as usersAPI from '../../utilities/users-api'
 import styles from './ProfilePage.module.scss'
+import ChatBox from '../../components/ChatBox/ChatBox'
 
 export default function ProfilePage({ user, setUser }) {
     const [searchInput, setSearchInput] = useState("")
+
+
+    // const updateIndividualExperience = async (id) => {
+    //     try {
+    //         const response = await fetch(`/api/experience/${id}`, {
+    //             method: 'PUT',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //                 'Authorization': `Bearer ${token}`
+    //             },
+    //             body: JSON.stringify(newExperienceData)
+    //         })
+    //         const data = await response.json()
+    //         return data
+    //     } catch (error) {
+    //         console.error(error)
+    //     }
+    // } // broken and buggy fail attempt.
+
     return (
         <main className={styles.ProfilePage}>
             <NavBar
@@ -31,6 +51,7 @@ export default function ProfilePage({ user, setUser }) {
                 user={user}
                 setUser={setUser}
             />
+            {/*<ChatBox />*/}
         </main>
     )
 }

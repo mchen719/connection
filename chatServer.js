@@ -2,36 +2,52 @@
 // MUST GO THROUGH THE PACES OF NPM I CORS AND SOCKET.IO   // (and yes you do need to add the period when summoning package)
 // there must be a clientServer folder, parallel to the serverfile.
 
+// you need to make sure that the chat server is complete and allows for external applications to touch it. (cors) you must ensure you're using cors.
 
-const express = require("express");
-const app = express(); // This must be especially examined with refactoring in mind. Must not conflict with app-server/
-const http = require("http");
-const { Server } = require("socket.io");
+const express = require("express")
+const app = express()
+const http = require("http")
+const socketio = require("socket.io")
+const path = require('path')
 const cors = require("cors");
+const httpserver = http.Server(app) // is this correct or does this need to be .createServer?
+const io = socketio(httpserver)
 
-app.use(cors());
+// must check if http.server has been updated since 2021 in node js docs.
 
-const server = http.createServer(app);
 
-const io = new Server(server, {
-  cors: {
-    origin: "http://localhost:3000",
-    methods: ["GET", "POST"],
-  },
-});
+app.use(cors()); // Arthur did not ultimately need cors in his script. What's vital about this middleware?
 
-io.on("connection", (socket) => {
-  console.log(`User Connected: ${socket.id}`);
+httpserver.listen(3012, () => {
+  console.log('Sock it to me!')
+})
 
-  socket.on("join_room", (data) => {
-    socket.join(data);
-  });
+const rooms = []
+const usernames = []
 
-  socket.on("send_message", (data) => {
-    socket.to(data.room).emit("receive_message", data);
-  });
-});
+// below: original template code, must follow arthur example instead
+// const io = new Server(server, {
+//   cors: {
+//     origin: "http://localhost:3000",
+//     methods: ["GET", "POST"],
+//   },
+// });
 
-server.listen(3001, () => {
-  console.log("SERVER IS RUNNING");
-});
+io.on('connection', function(socket){
+  socket.on('join_room', function(room, username){
+    if (username != ""){
+      rooms[socket.id] = room
+      usernames[socket.id] = username
+      socket.leaveAll()
+      socket.join(room)
+      io.in(room).emit('receive', 'Server: ' + username + 'has entered the chat.')
+      socket.emit('join_room', room)
+    }
+  })
+  socket.on('send_message', function(message){
+    io.in(rooms[socket.id]).emit('receive', usernames[socket.id] + ' : ' + message)
+  })
+  socket.on('receive_message', function(message){
+    socket.emit('receive', message)
+  })
+})
