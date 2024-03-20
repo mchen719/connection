@@ -1,19 +1,54 @@
+
+// import JobItem from '../JobItem/JobItem';
+
+// export default function JobListings({ jobListings }) {
+//     console.log(jobListings);
+
+//     // Check if jobListings is an array before mapping over it
+//     if (!Array.isArray(jobListings)) {
+//         console.error('jobListings is not an array');
+//         return null; // or display an error message
+//     }
+
+//     const displayJobs = jobListings.map(job =>
+//         <JobItem
+//             key={job._id}
+//             jobItem={job}
+//         />
+//     );
+
+//     return (
+//         <main>
+//             {displayJobs}
+//         </main>
+//     );
+// }
+
 import React from 'react';
+import JobItem from '../JobItem/JobItem';
 
-const Job = ({ job }) => {
-  return (
-    <div className="job">
-      <h2 className="job-title">{job.title}</h2>
-      <p className="job-company">{job.company}</p>
-      <p className="job-location">{job.location}</p>
-      <p className="job-description">{job.description}</p>
-      <ul className="job-requirements">
-        {job.requirements.map((requirement, index) => (
-          <li key={index}>{requirement}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+export default function JobListings({ jobListings }) {
+    // Check if jobListings is not an array or is empty
+    if (!Array.isArray(jobListings) || jobListings.length === 0) {
+        return (
+            <main>
+                <p>No job listings available.</p>
+            </main>
+        );
+    }
 
-export default Job;
+    // Map over jobListings to display each job item
+    const displayJobs = jobListings.map(job =>
+        <JobItem
+            key={job._id}
+            jobItem={job}
+        />
+    );
+
+    return (
+        <main>
+            {displayJobs}
+        </main>
+    );
+}
+
