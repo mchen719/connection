@@ -12,10 +12,10 @@ export default function AboutMe( {user} ) {
         <div className={styles.content}>
             <h1>{user.name}</h1>
             <h2>Contact info: {user.email}</h2>
-            <div className={styles.proPic}>
-                <img src={user.profilePicture} />
-            </div>
             <h4>About Me: {user.summary}</h4>
+            </div>
+            <div className={styles.proPicContainer}>
+                <img src={user.profilePicture} className={styles.profilePicture} />
             </div>
         </div>
     )
