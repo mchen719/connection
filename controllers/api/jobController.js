@@ -21,11 +21,10 @@ const createJob = async (req, res) => {
   };
 
   //get jobs 
- const getJobs = async (req, res, next) => {
+ const getJobs = async (req, res) => {
     try {
-      const jobs = await Job.find().populate('postedBy', 'name'); // Populate postedBy field with user's name
+      const jobs = await Job.find().populate('createdBy'); // Populate postedBy field with user's name
       res.json(jobs);
-      next()
     } catch (error) {
       res.status(500).json({ message: error.message });
     }
