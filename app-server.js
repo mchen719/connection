@@ -23,7 +23,7 @@ app.use('/api/experience', require('./routes/api/experienceRouter'))
 app.use('/api/education', require('./routes/api/educationRouter'))
 app.use('/api/post', require('./routes/api/postRouter'));
 app.use('/api/skill', require('./routes/api/skillRouter'));
-app.use('/api/job', require('./routes/api/jobRouter'))
+app.use('/api/jobs', require('./routes/api/jobRouter'))
 
 app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'public', 'index.html'))

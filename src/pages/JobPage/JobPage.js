@@ -1,51 +1,37 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom'; // Import useParams
+import { useParams } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
+import JobListings from '../../components/JobListings/JobListings';
+import * as jobsAPI from '../../utilities/jobs-api';
 
-const JobPage = ({user, setUser}) => {
-  const { jobId } = useParams(); // Access the jobId parameter from the URL
-  const [job, setJob] = useState(null); // State to store the job data
+const JobPage = ({ user, setUser }) => {
+    const { jobId } = useParams();
+    const [jobListings, setJobListings] = useState([]);
+    const [isLoading, setIsLoading] = useState(true); 
 
-  useEffect(() => {
-    // Fetch the job data based on jobId when the component mounts
-    const fetchJob = async () => {
-      try {
-        const response = await fetch(`/api/jobs/${jobId}`); // Use fetch to make the request
-        if (!response.ok) {
-          throw new Error('Failed to fetch job');
+    useEffect(() => {
+        async function fetchJobs() {
+            const jobs = await jobsAPI.getAllJobs();
+            setJobListings(jobs);
+            setIsLoading(false); 
         }
-        const data = await response.json(); // Parse the JSON response
-        setJob(data); // Update the job state with the fetched data
-      } catch (error) {
-        console.error('Error fetching job:', error);
-      }
-    };
+        fetchJobs();
+    }, []); 
 
-    // fetchJob(); // Call the fetchJob function
-  }, [jobId]); // Dependency array ensures useEffect runs only when jobId changes
+    if (isLoading) {
+        return <div>Loading...</div>;
+    }
 
-  return (
-    <div>
-      <NavBar user={user} setUser={setUser}/> 
-      <h1>Job Details</h1>
-      {job ? (
+    console.log("Number of job listings:", jobListings.length);
+
+    return (
         <div>
-          <h2>{job.title}</h2>
-          <p>{job.company}</p>
-          <p>{job.location}</p>
-          <p>{job.description}</p>
-          <ul>
-            {job.requirements.map((requirement, index) => (
-              <li key={index}>{requirement}</li>
-            ))}
-          </ul>
+            <NavBar user={user} setUser={setUser} />
+            <h1>Job Listings</h1>
+            {/* Pass all job listings to the JobListings component */}
+            <JobListings jobListings={jobListings} />
         </div>
-      ) : (
-        <p>No jobs to currently display</p>
-      )}
-    </div>
-  );
+    );
 };
 
 export default JobPage;
-

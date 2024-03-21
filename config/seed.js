@@ -491,8 +491,7 @@ const seed = async () => {
             location: "San Francisco, CA",
             description: "We're a trio of twenty-two year old founders with lofty ambitions of spending all our hedge fund money on the next ego-vanity project you can think of! We're a family here, that means extra hours for no extra pay and no bonuses forever.",
             requirements: ["Ten Years' Full Stack Development", "Microsoft Office", "Git", "Excessive Experience in an Obscure Programming Framework You've Never Heard Of"],
-            createdAt: new Date('March 17 2024 17:22:02')
-        },
+            createdAt: new Date('March 17 2024 17:22:02')        },
         {
             title: "Legal Defense Counsel",
             company: "MaceRich",
