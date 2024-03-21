@@ -36,10 +36,10 @@ const AppRouter = () => {
 				<Route path='/*' element={<Navigate to="/home"/>}/>
 			</Routes>
 				:
-				<AuthPage/>
+				<AuthPage setUser={setUser}/>
 				}
 			</>
-			
+
 
 			</main>
 		</Router>

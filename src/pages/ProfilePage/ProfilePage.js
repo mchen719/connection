@@ -3,7 +3,6 @@ import React from 'react'
 import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AboutMe from '../../components/AboutMe/AboutMe'
-// import Logo from '../../components/Logo/Logo' // What if we include the logo within the nav bar itself to simplify?
 import NavBar from '../../components/NavBar/NavBar'
 // import NotificationsList from '../../components/NotificationsList/NotificationsList
 import ProDetails from '../../components/ProDetails/ProDetails'
@@ -19,10 +18,18 @@ export default function ProfilePage({ user, setUser }) {
     return (
         <main className={styles.ProfilePage}>
             <div>PROFILE PLACEHOLDER!!!</div>
-            <NavBar />
-            <AboutMe />
-            <ProDetails />
+            <NavBar
+                user={user}
+                setUser={setUser}
+            />
+            <AboutMe
+                user={user}
+                setUser={setUser}
+            />
+            <ProDetails
+                user={user}
+                setUser={setUser}
+            />
         </main>
     )
 }
-
