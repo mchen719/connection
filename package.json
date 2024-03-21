@@ -68,6 +68,7 @@
     "mongoose": "^7.6.10",
     "morgan": "^1.10.0",
     "serve-favicon": "^2.5.0",
+    "socket.io": "^4.7.5",
     "supertest": "^6.3.4"
   }
 }
