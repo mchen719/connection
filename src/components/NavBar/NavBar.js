@@ -10,14 +10,16 @@ export default function NavBar({user, setUser}) {
          <Logo />
       </div>
 			<button className={styles.navButtons}>
-			<Link to="/home" className={styles.NavButton}>Home/Feed</Link>
+			<Link to="/home" className={styles.NavButton}>Home Feed</Link>
 			<Link to="/profile" className={styles.NavButton}>Profile Page</Link>
 			<Link to="/jobs" className={styles.NavButton}>Job Listings</Link>
 			</button>
+			<div className={styles.logout}>
 			<UserLogOut
 			user={user}
 			setUser={setUser}
 			/>
+			</div>
 		</nav>
 	)
 }
