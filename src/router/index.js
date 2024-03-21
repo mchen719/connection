@@ -29,6 +29,7 @@ const AppRouter = () => {
 							page={key}
 							user={user}
 							setUser={setUser}
+
 						/>
 						}
 					></Route>
