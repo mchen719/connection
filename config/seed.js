@@ -136,8 +136,8 @@ const seed = async () => {
             title: "Professional Adult",
             company: "self employed",
             location: 'Atlanta, GA',
-            startDate: new Date('February 24 2020 02:20:22'),
-            endDate: new Date('April 22 2023 09:21:22'),
+            startDate: new Date('February 24 2020 02:20:22').getFullYear(),
+            endDate: new Date('April 22 2023 09:21:22').getFullYear(),
             description: "Adulting, all day every day. Super hireable."
         },
         {
@@ -145,8 +145,8 @@ const seed = async () => {
             title: "Tax Auditor",
             company: "HNR Block",
             location: 'Savannah, GA',
-            startDate: new Date('March 12 2018 21:20:32'),
-            endDate: new Date('April 22 2020 22:32:12'),
+            startDate: new Date('March 12 2018 21:20:32').getFullYear(),
+            endDate: new Date('April 22 2020 22:32:12').getFullYear(),
             description: "Made sure that the rich paid less and the poor paid more."
         },
         {
@@ -154,8 +154,8 @@ const seed = async () => {
             title: "Corporate Accountant",
             company: "Enron",
             location: 'Richmond, VA',
-            startDate: new Date('April 30 2020 15:12:11'),
-            endDate: new Date('October 22 2023 11:11:11'),
+            startDate: new Date('April 30 2020 15:12:11').getFullYear(),
+            endDate: new Date('October 22 2023 11:11:11').getFullYear(),
             description: "Found all of the money that was once embezzled, breathed life into long dead company."
         },
         {
@@ -163,7 +163,7 @@ const seed = async () => {
             title: "Software Engineering Instructor",
             company: "General Assembly",
             location: 'Remote',
-            startDate: new Date('February 24 2015 16:35:23'),
+            startDate: new Date('February 24 2015 16:35:23').getFullYear(),
             description: "Singlehandedly trained a generation of AI architects and brought rise to the birth of skynet."
         },
         {
@@ -171,8 +171,8 @@ const seed = async () => {
             title: "Scientist",
             company: "Beakers Labs",
             location: 'Toronto, CA',
-            startDate: new Date('May 23 1999 18:11:33'),
-            endDate: new Date('July 30 2005 19:11:11'),
+            startDate: new Date('May 23 1999 18:11:33').getFullYear(),
+            endDate: new Date('July 30 2005 19:11:11').getFullYear(),
             description: "SCIENCE! She blinded me with it!"
         },
         {
@@ -180,8 +180,8 @@ const seed = async () => {
             title: "Smarter Scientist",
             company: "Beakers Labs",
             location: 'Toronto, CA',
-            startDate: new Date('August 01 2005 15:41:22'),
-            endDate: new Date('September 19 2012 20:44:24'),
+            startDate: new Date('August 01 2005 15:41:22').getFullYear(),
+            endDate: new Date('September 19 2012 20:44:24').getFullYear(),
             description: "Cured cancer and fully sequenced the human genome."
         },
         {
@@ -189,7 +189,7 @@ const seed = async () => {
             title: "Mad Scientist",
             company: "Beaker Labs",
             location: 'Toronto, CA',
-            startDate: new Date('November 12 2012 15:11:21'),
+            startDate: new Date('November 12 2012 15:11:21').getFullYear(),
 
             description: "Not mad as in evil, mad as in can't understand how the world is falling apart this badly."
         },
@@ -210,71 +210,71 @@ const seed = async () => {
             school: "The School of Hard Knox",
             degree: "Certification",
             fieldOfStudy: "Adulting",
-            startDate: new Date('February 9 2009 23:24:00'),
-            endDate: new Date('December 17, 2013 05:24:00')
+            startDate: new Date('February 9 2009 23:24:00').getFullYear(),
+            endDate: new Date('December 17, 2013 05:24:00').getFullYear()
         },
         {
             userId: usersSeed[1],
             school: "New York University",
             degree: "Bachelors of Arts",
             fieldOfStudy: "Accounting",
-            startDate: new Date('May 22 2013 13:02:00'),
-            endDate: new Date('May 31 2017 18:02:24')
+            startDate: new Date('May 22 2013 13:02:00').getFullYear(),
+            endDate: new Date('May 31 2017 18:02:24').getFullYear()
         },
         {
             userId: usersSeed[1],
             school: "New York University",
             degree: "Masters",
             fieldOfStudy: "Accounting",
-            startDate: new Date('June 12 2016 21:20:01'),
-            endDate: new Date('April 30 2020 19:10:02')
+            startDate: new Date('June 12 2016 21:20:01').getFullYear(),
+            endDate: new Date('April 30 2020 19:10:02').getFullYear()
         },
         {
             userId: usersSeed[2],
             school: "General Assembly",
             degree: "Certification",
             fieldOfStudy: "Software Engineering",
-            startDate: new Date('October 20 2014 04:10:01'),
-            endDate: new Date('January 3 2015 06:22:10')
+            startDate: new Date('October 20 2014 04:10:01').getFullYear(),
+            endDate: new Date('January 3 2015 06:22:10').getFullYear()
         },
         {
             userId: usersSeed[2],
             school: "Georgia Tech",
             degree: "Bachelor's of Arts",
             fieldOfStudy: "Computer Science",
-            startDate: new Date('August 10 2010 14:22:10'),
-            endDate: new Date('August 3 2014 17:13:09')
+            startDate: new Date('August 10 2010 14:22:10').getFullYear(),
+            endDate: new Date('August 3 2014 17:13:09').getFullYear()
         },
         {
             userId: usersSeed[3],
             school: "Oxford University",
             degree: "PHD",
             fieldOfStudy: "Biology",
-            startDate: new Date('July 1 1989 09:20:02'),
-            endDate: new Date('May 1 1999 15:50:30')
+            startDate: new Date('July 1 1989 09:20:02').getFullYear(),
+            endDate: new Date('May 1 1999 15:50:30').getFullYear()
         },
         {
             userId: usersSeed[4],
             school: "Sarah Lawrence College",
             degree: "Bachelor's of Arts",
             fieldOfStudy: "Liberal Arts",
-            startDate: new Date('August 1 2009 08:20:20'),
-            endDate: new Date('May 24 2013 09:22:12')
+            startDate: new Date('August 1 2009 08:20:20').getFullYear(),
+            endDate: new Date('May 24 2013 09:22:12').getFullYear()
         },
         {
             userId: usersSeed[5],
             school: "San Francisco State University",
             degree: "Associate's of Business",
             fieldOfStudy: "Business Administration",
-            startDate: new Date('august 24 2019 12:11:01'),
-            endDate: new Date('August 21 2023 01:11:10')
+            startDate: new Date('august 24 2019 12:11:01').getFullYear(),
+            endDate: new Date('August 21 2023 01:11:10').getFullYear()
         },
         {
             userId: usersSeed[6],
             school: "Florida University",
             degree: "Bachelor's of Arts",
             fieldOfStudy: "Law",
-            startDate: new Date('April 20 2019 04:20:20')
+            startDate: new Date('April 20 2019 04:20:20').getFullYear()
         }
     ])
 
