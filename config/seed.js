@@ -135,6 +135,7 @@ const seed = async () => {
             userId: usersSeed[0]._id, // test user 1
             title: "Professional Adult",
             company: "self employed",
+            location: 'Atlanta, GA',
             startDate: new Date('February 24 2020 02:20:22'),
             endDate: new Date('April 22 2023 09:21:22'),
             description: "Adulting, all day every day. Super hireable."
@@ -143,6 +144,7 @@ const seed = async () => {
             userId: usersSeed[1]._id, // test user 2
             title: "Tax Auditor",
             company: "HNR Block",
+            location: 'Savannah, GA',
             startDate: new Date('March 12 2018 21:20:32'),
             endDate: new Date('April 22 2020 22:32:12'),
             description: "Made sure that the rich paid less and the poor paid more."
@@ -151,6 +153,7 @@ const seed = async () => {
             userId: usersSeed[1]._id, // test user 2
             title: "Corporate Accountant",
             company: "Enron",
+            location: 'Richmond, VA',
             startDate: new Date('April 30 2020 15:12:11'),
             endDate: new Date('October 22 2023 11:11:11'),
             description: "Found all of the money that was once embezzled, breathed life into long dead company."
@@ -159,6 +162,7 @@ const seed = async () => {
             userId: usersSeed[2]._id, // test user 3
             title: "Software Engineering Instructor",
             company: "General Assembly",
+            location: 'Remote',
             startDate: new Date('February 24 2015 16:35:23'),
             description: "Singlehandedly trained a generation of AI architects and brought rise to the birth of skynet."
         },
@@ -166,6 +170,7 @@ const seed = async () => {
             userId: usersSeed[3]._id, // test user 4
             title: "Scientist",
             company: "Beakers Labs",
+            location: 'Toronto, CA',
             startDate: new Date('May 23 1999 18:11:33'),
             endDate: new Date('July 30 2005 19:11:11'),
             description: "SCIENCE! She blinded me with it!"
@@ -174,6 +179,7 @@ const seed = async () => {
             userId: usersSeed[3]._id, // test user 4
             title: "Smarter Scientist",
             company: "Beakers Labs",
+            location: 'Toronto, CA',
             startDate: new Date('August 01 2005 15:41:22'),
             endDate: new Date('September 19 2012 20:44:24'),
             description: "Cured cancer and fully sequenced the human genome."
@@ -182,7 +188,9 @@ const seed = async () => {
             userId: usersSeed[3]._id, // test user 4
             title: "Mad Scientist",
             company: "Beaker Labs",
+            location: 'Toronto, CA',
             startDate: new Date('November 12 2012 15:11:21'),
+
             description: "Not mad as in evil, mad as in can't understand how the world is falling apart this badly."
         },
     ])
