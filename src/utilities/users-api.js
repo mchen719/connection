@@ -8,3 +8,13 @@ export function signUp(userData) {
 export function login(credentials) {
     return sendrequest(`${BASE_URL}/login`, 'POST', credentials)
 }
+
+// Below : for search bar needs
+
+export function getAllUsers() {
+    return sendRequest(`${BASE_URL}/`, 'GET')
+}
+
+export function getUserById(id) {
+    return sendRequest(`${BASE_URL}/${id}`, 'GET', id);
+}

@@ -38,17 +38,15 @@ export default function ProDetails({ user, education, experience, skills }) {
               <h3>~No Experience To Show~</h3>
             }
              </div>
-
+             <h2>Education</h2>
              <div className={styles.educationContainer}>
-                <h2>Education</h2>
             {userEducationItems.length ?
              userEducationItems :
               <h3>~No Education To Show~</h3>
             }
              </div>
-
+             <h2>Skills</h2>
              <div className={styles.skillsContainer}>
-                <h2>Skills</h2>
             {userSkillsItems.length ?
               userSkillsItems :
               <h3>~No Skills To Show~</h3>
