@@ -50,12 +50,14 @@ const dataController = {
         const user = await User.findOne({ _id: req.params.id})
         updates.forEach(update => user[update] = req.body[update])
         await user.save()
-        res.json(user)
-        console.log(user)
+        const token = createJWT(user)
+        res.json({ user, token })
+        console.log(user) // delete upon completion
     } catch {
         res.status(400).json('Bad Credentials')
     }
   },
+  // Add token to update and store on the front end
 async delete (req, res) {
     try {
         const user = await User.findOne({ _id: req.params.id})

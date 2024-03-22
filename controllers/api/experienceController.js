@@ -3,23 +3,26 @@ const Experience = require('../../models/experience');
 
 const createExperience = async (req, res) => {
   try {
-    const { userId, title, company, location, startDate, endDate, description } = req.body;
+    const { title, company, location, startDate, endDate, description } = req.body;
     
     // Create a new experience 
     const newExperience = new Experience({
-      userId,
       title,
       company,
       location,
       startDate,
       endDate,
-      description
+      description,
+      userId: req.user._id
     });
+    // needs to connect to user with token authentication
 
     // Save the new experience to the database
-    const savedExperience = await newExperience.save();
+    await newExperience.save();
+    req.user.experience.addToSet(newExperience)
+    await req.user.save()
 
-    res.status(200).json(savedExperience);
+    res.status(200).json({ newExperience, user: req.user });
   } catch (error) {
     res.status(400).json({ message: error.message });
   }

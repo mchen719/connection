@@ -22,7 +22,9 @@ export async function login(credentials) {
 
 export async function update(data, id) {
   const userData = await usersAPI.update(data, id)
-  return userData
+  localStorage.setItem('token', userData.token)
+  console.log('changed token', getUser())
+  return userData.user
 }
 
 export function getToken() {
