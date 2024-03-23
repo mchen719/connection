@@ -58,7 +58,7 @@ export default function ProfilePage({ user, setUser }) {
                 setUser={setUser}
             />
 
-            <ChatBox />
+            {/* <ChatBox /> */}
         </main>
     )
 }
