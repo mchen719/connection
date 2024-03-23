@@ -1,0 +1,29 @@
+.ChatBox {
+    border: solid 3px yellow;
+    padding: 1rem;
+    margin: 2rem;
+    width: 50%;
+    align-items: center;
+    text-align: center;
+    color: white;
+    font-size: 14pt;
+    input {
+        color: white;
+    }
+  }
+
+
+  .messageBox {
+    border: solid 2px red;
+    margin-top: .5rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    width: 100%;
+  }
+
+  .chatMessage {
+    border: solid 1px white;
+    padding: .25rem;
+    margin: .25rem;
+    font-size: 14pt;
+  }

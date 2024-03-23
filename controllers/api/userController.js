@@ -1,5 +1,28 @@
 // /controllers/api/users.js
 
+// below: template material for index and show of users. We need to implement backend logic in order to get the routes functioning I think. I thought usersAPI would do this but I think I'm wrong.
+// async function index(_, res ,next) {
+//   try {
+//       const blogs = await Blog.find({})
+//       res.locals.data.blogs = blogs
+//       next()
+//   } catch (error) {
+//       res.status(400).json({ msg: error.message })
+//   }
+// }
+
+
+// async function show(req ,res,next) {
+//   try {
+//       const blog = await Blog.findById(req.params.id)
+//       res.locals.data.blog = blog
+//       next()
+//   } catch (error) {
+//       res.status(400).json({ msg: error.message })
+//   }
+// }
+
+
 const User = require('../../models/user')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')

@@ -5,6 +5,8 @@ const { checkToken, dataController, apiController } = require('../../controllers
 const ensureLoggedIn = require('../../config/ensureLoggedIn')
 
 
+// must build index and show routes ? we can't show users without building them
+
 // POST /api/users
 router.post('/', dataController.create, apiController.auth)
 // POST /api/users/login
