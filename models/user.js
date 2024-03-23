@@ -29,7 +29,7 @@ const userSchema = new Schema({
   messages: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Chat'}],
   posts: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],
   //friends 
-  friends: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
+  connections: [{ type: mongoose.Schema.Types.ObjectId, ref: 'User' }]
 },
 {
     timestamps: true

@@ -98,8 +98,17 @@ async show (req, res) {
   } catch (error) {
     res.status(400).json({ msg: error.message })
   }
+},
+async getAllUsers (req, res) {
+  try {
+    const users = await User.find({}) 
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
+  }
 }
 }
+
 
 const apiController = {
   auth (req, res) {
