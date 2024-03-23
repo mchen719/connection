@@ -19,4 +19,6 @@ router.delete('/:id', ensureLoggedIn, dataController.delete)
 // GET /api/users/check-token
 router.get('/check-token', ensureLoggedIn, checkToken)
 
+router.get('/:id', dataController.show )
+
 module.exports = router
