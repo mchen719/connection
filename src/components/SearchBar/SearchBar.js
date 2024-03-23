@@ -33,13 +33,11 @@ export default function SearchBar({
     return (
         <div className={styles.searchData}>
             <div className={styles.searchbar}>
-        <label>Search our catalogue of job postings here!
         <input className={styles.search}
             type="text"
             value={searchInput}
             placeholder="Search..."
             onChange={e => setSearchInput(e.target.value)} />
-            </label>
             </div>
     </div>
 

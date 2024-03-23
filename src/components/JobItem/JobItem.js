@@ -1,11 +1,12 @@
+import styles from './JobItem.module.scss'
 
 const JobListing = ({ jobItem }) => {
     return (
-        <div key={ jobItem._id } >
+        <div key={ jobItem._id }className={styles.jobItem}>
             <h2>{jobItem.title}</h2>
-            <p>Company: {jobItem.company}</p>
-            <p>Location: {jobItem.location}</p>
-            <p>Description: {jobItem.description}</p>
+            <div className={styles.jobData}>Company: {jobItem.company}</div>
+            <div className={styles.jobData}>Location: {jobItem.location}</div>
+            <div className={styles.jobData}>Description: {jobItem.description}</div>
         </div>
     );
 };
