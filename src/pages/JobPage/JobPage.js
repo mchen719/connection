@@ -40,12 +40,6 @@ const JobPage = ({ user, setUser }) => {
             <h1>Job Listings</h1>
             {/* Pass all job listings to the JobListings component */}
             <JobListings jobListings={jobListings} />
-<<<<<<< HEAD
-=======
-
-            {/* Render the CreateJobForm component */}
-
->>>>>>> f60f6333189e58fd48b22b3ae384d3b4c550bd38
             <CreateJobForm user={user} setUser={setUser} />
         </div>
     );
