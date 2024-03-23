@@ -9,6 +9,10 @@ export function login(credentials) {
     return sendrequest(`${BASE_URL}/login`, 'POST', credentials)
 }
 
+export function update(data, id) {
+    return sendrequest(`${BASE_URL}/${id}`, 'PUT', data)
+}
+
 // Below : for search bar needs
 
 export function getAllUsers() {
@@ -18,3 +22,4 @@ export function getAllUsers() {
 export function getUserById(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'GET', id);
 }
+
