@@ -17,10 +17,10 @@ const experienceSchema = new Schema({
     },
     location: String,
     startDate: {
-        type: Date,
+        type: Number,
         required: true
     },
-    endDate: Date,
+    endDate: Number,
     description: String
 },
 {

@@ -1,5 +1,28 @@
 // /controllers/api/users.js
 
+// below: template material for index and show of users. We need to implement backend logic in order to get the routes functioning I think. I thought usersAPI would do this but I think I'm wrong.
+// async function index(_, res ,next) {
+//   try {
+//       const blogs = await Blog.find({})
+//       res.locals.data.blogs = blogs
+//       next()
+//   } catch (error) {
+//       res.status(400).json({ msg: error.message })
+//   }
+// }
+
+
+// async function show(req ,res,next) {
+//   try {
+//       const blog = await Blog.findById(req.params.id)
+//       res.locals.data.blog = blog
+//       next()
+//   } catch (error) {
+//       res.status(400).json({ msg: error.message })
+//   }
+// }
+
+
 const User = require('../../models/user')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
@@ -50,13 +73,14 @@ const dataController = {
         const user = await User.findOne({ _id: req.params.id})
         updates.forEach(update => user[update] = req.body[update])
         await user.save()
-        res.json(user)
-        console.log(user)
-        next()
+        const token = createJWT(user)
+        res.json({ user, token })
+        console.log(user) // delete upon completion
     } catch {
         res.status(400).json('Bad Credentials')
     }
   },
+  // Add token to update and store on the front end
 async delete (req, res) {
     try {
         const user = await User.findOne({ _id: req.params.id})

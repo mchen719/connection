@@ -39,8 +39,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
+import SearchBar from '../../components/SearchBar/SearchBar'
 import JobListings from '../../components/JobListings/JobListings';
 import * as jobsAPI from '../../utilities/jobs-api';
+import CreateJobForm from '../../components/JobForm/JobForm';
+
 
 // Import the CreateJobForm component
 import CreateJobForm from '../../components/JobForm/jobForm';
@@ -48,16 +51,21 @@ import CreateJobForm from '../../components/JobForm/jobForm';
 const JobPage = ({ user, setUser }) => {
     const { jobId } = useParams();
     const [jobListings, setJobListings] = useState([]);
-    const [isLoading, setIsLoading] = useState(true); 
+    const [isLoading, setIsLoading] = useState(true);
+    const [searchInput, setSearchInput] = useState('')
+
+    const handleSearch = () => {
+        return !searchInput ? jobListings : jobListings.filter(jobListing => jobListing.title.toLowerCase().includes(searchInput.toLowerCase().trim()))
+    }
 
     useEffect(() => {
         async function fetchJobs() {
             const jobs = await jobsAPI.getAllJobs();
             setJobListings(jobs);
-            setIsLoading(false); 
+            setIsLoading(false);
         }
         fetchJobs();
-    }, []); 
+    }, []);
 
     if (isLoading) {
         return <div>Loading...</div>;
@@ -71,7 +79,9 @@ const JobPage = ({ user, setUser }) => {
             <h1>Job Listings</h1>
             {/* Pass all job listings to the JobListings component */}
             <JobListings jobListings={jobListings} />
+
             {/* Render the CreateJobForm component */}
+
             <CreateJobForm user={user} setUser={setUser} />
         </div>
     );
