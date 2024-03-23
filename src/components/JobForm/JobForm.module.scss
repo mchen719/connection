@@ -1,0 +1,23 @@
+/* JobForm.module.scss */
+
+.job-form-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+    form {
+      // Add styles as needed
+    }
+  
+    input,
+    textarea {
+      // Add styles as needed
+    }
+  }
+  
