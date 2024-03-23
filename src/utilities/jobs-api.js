@@ -10,9 +10,10 @@ export const getJobById = (id) => {
   return sendRequest(`${BASE_URL}/${id}`);
 };
 
-export const createJob = (jobData) => {
-  return sendRequest(BASE_URL, {
-    method: 'POST',
+export const createJob = (jobData, method) => {
+  console.log('Creating job with method:', method);
+  return sendRequest(BASE_URL, method, {
+    // method: String(method),
     body: JSON.stringify(jobData),
     headers: {
       'Content-Type': 'application/json',
