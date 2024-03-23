@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import sendRequest from '../../utilities/send-request';
+import styles from './JobForm.module.scss'
 import * as jobsAPI from '../../utilities/jobs-api';
 
 const CreateJobForm = ({ user }) => {

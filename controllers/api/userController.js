@@ -90,8 +90,15 @@ async delete (req, res) {
     } catch (error) {
         res.status(400).json({ msg: error.message })
     }
+},
+async show (req, res) {
+  try {
+    const user = await User.findOne({ _id: req.params.id })
+    res.status(200).json(user)
+  } catch (error) {
+    res.status(400).json({ msg: error.message })
+  }
 }
-
 }
 
 const apiController = {
