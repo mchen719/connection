@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 // completely self contained. chat box communicate with chat server and plug the basic tag into the profil page and that's IT.
 
 // Below is functioning differently than Arthur code. is this wrong? THIS is the localhost number that has to match the httpserver in my server file yes?
-// const socket = io.connect("http://localhost:3012");
+ const socket = io.connect("http://localhost:3012");
 
 export default function ChatBox() {
   const [room, setRoom] = useState("");
@@ -31,8 +31,7 @@ export default function ChatBox() {
         }
         // below may not be correct syntax, must confirm with arthur
         else {
-        messages.shift();
-        setMessages([...messages, message])
+        setMessages([...messages.shift(), message])
         }
     })
 
