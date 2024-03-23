@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import NavBar from '../../components/NavBar/NavBar';
-import SearchBar from '../../components/SearchBar/SearchBar'
+import SideBar from '../../components/SideBar/SideBar';
+import SearchBar from '../../components/SearchBar/SearchBar';
 import JobListings from '../../components/JobListings/JobListings';
 import styles from './JobPage.module.scss'
 import * as jobsAPI from '../../utilities/jobs-api';
@@ -36,6 +37,7 @@ const JobPage = ({ user, setUser }) => {
     return (
         <div className={styles.jobPage}>
             <NavBar user={user} setUser={setUser} />
+            <SideBar user={user} setUser={setUser} />
             <h1>Job Listings</h1>
             {/* Pass all job listings to the JobListings component */}
             <h3>Search our catalogue of jobs below!</h3>
@@ -45,6 +47,7 @@ const JobPage = ({ user, setUser }) => {
             jobListings={jobListings}
             />
             <JobListings jobListings={handleSearch()} />
+            <CreateJobForm user={user} setUser={setUser} />
         </div>
     );
 };
