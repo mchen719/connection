@@ -1,5 +1,6 @@
 import styles from "./Chatbox.module.scss";
-import io from "socket.io-client"; // Do I need this here?
+// const socketio = require('socket.io')
+import io from "socket.io-client"; // Do I need this here? THIS may be the thing that is not helping me
 import { useEffect, useState } from "react";
 
 // BEST PRACTICE : Deploy the chatbox SEPARATE from application. 'the hardest thing to do is deploy it in the same browser. It needs its' own server/service app that gets plugged INTO the page.
