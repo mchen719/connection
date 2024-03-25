@@ -61,6 +61,12 @@ export default function ProfilePage({ user, setUser }) {
             />
             <UserListings userListings={handleSearch()} />
 
+            <SearchBar
+                searchInput={searchInput}
+                setSearchInput={setSearchInput}
+            />
+            {/* <UsersList userListings={handleSearch()} /> */}
+
             {/* <ChatBox /> */}
         </main>
     )

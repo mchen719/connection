@@ -10,11 +10,8 @@ export default function UserItem({ userItem }) {
         <div key={ userItem._id }className={styles.userItem}>
             <div className={styles.userData}>{userItem.name}</div>
             <div className={styles.userEmail}>{userItem.email}</div>
+
             </div>
         </div>
     );
 }
-
-// className="user-listing"
-
-// userItem isn't correctly returning atm.
