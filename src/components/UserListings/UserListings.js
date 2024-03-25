@@ -16,7 +16,7 @@ export default function UserListings({ userListings }) {
     const displayUsers = userListings.map(searchedUser =>
         <UserItem
             key={searchedUser._id}
-            UserItem={searchedUser}
+            userItem={searchedUser}
         />
     );
 

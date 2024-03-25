@@ -16,11 +16,17 @@ export function update(data, id) {
 // Below : for search bar needs
 // or BASE_URL, 'GET' ???
 
-export function getAllUsers() {
-    console.log("Jokes!")
-    return sendRequest(BASE_URL)
+export const getAllUsers = () => {
+    return sendrequest(BASE_URL)
+}
+export default function getUserById(id) {
+    return sendrequest(`${BASE_URL}/${id}`, 'GET', id);
 }
 
-export function getUserById(id) {
-    return sendRequest(`${BASE_URL}/${id}`, 'GET', id);
-}
+// export const getAllJobs = () => {
+//     return sendRequest(BASE_URL);
+//   };
+
+//   export const getJobById = (id) => {
+//     return sendRequest(`${BASE_URL}/${id}`);
+//   };
