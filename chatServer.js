@@ -2,6 +2,8 @@
 // MUST GO THROUGH THE PACES OF NPM I CORS AND SOCKET.IO   // (and yes you do need to add the period when summoning package)
 // there must be a clientServer folder, parallel to the serverfile.
 
+
+// am I going to have to change 'username' to the actual user.id? How do I point toward user.name?
 // you need to make sure that the chat server is complete and allows for external applications to touch it. (cors) you must ensure you're using cors.
 
 const express = require("express")
@@ -14,6 +16,8 @@ const httpserver = http.Server(app) // is this correct or does this need to be .
 const io = socketio(httpserver)
 
 // must check if http.server has been updated since 2021 in node js docs.
+// how do we populate the messages array correctly with received/sent messages? Am I correct in my interpretation?
+// my server is not alive, what am I missing?
 
 
 app.use(cors()); // Arthur did not ultimately need cors in his script. What's vital about this middleware?

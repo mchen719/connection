@@ -22,6 +22,10 @@ export default async function sendRequest(url, method = 'GET', payload = null) {
   throw new Error('Bad Request');
 }
 
+<<<<<<< HEAD
 //import send-request into create post file.
 //sendRequest('/api/post', 'POST', formData)
 //for handleSubmit, have a try catch and await all things properly
+=======
+	
+>>>>>>> 4d7d26d1528c6c56510ff4c169e74be72e0ac281

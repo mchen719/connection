@@ -2,6 +2,7 @@
 
 import React from 'react';
 import JobItem from '../JobItem/JobItem';
+import styles from './JobListings.module.scss'
 
 export default function JobListings({ jobListings }) {
     // Check if jobListings is not an array or is empty
@@ -22,9 +23,8 @@ export default function JobListings({ jobListings }) {
     );
 
     return (
-        <main>
+        <main className={styles.jobListings}>
             {displayJobs}
         </main>
     );
 }
-
