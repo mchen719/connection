@@ -5,11 +5,11 @@ export default function UserEducationItem({userEducationItem}){
     return (
         <div className={styles.UserEducationItem}>
             <div>
-                <span>{userEducationItem.school}</span>
-                <span>{userEducationItem.degree}</span>
-                <span>{userEducationItem.fieldOfStudy}</span>
-                <span>{userEducationItem.startDate}</span>
-                <span>{userEducationItem.endDate}</span>
+                <div className={styles.school}>School: {userEducationItem.school}</div>
+                <div className={styles.degree}>Degree: {userEducationItem.degree}</div>
+                <div className={styles.fieldOfStudy}>Field of Study: {userEducationItem.fieldOfStudy}</div>
+                <div className={styles.startDate}>Start Date: {userEducationItem.startDate}</div>
+                <div className={styles.endDate}>End Date: {userEducationItem.endDate}</div>
             </div>
         </div>
     )

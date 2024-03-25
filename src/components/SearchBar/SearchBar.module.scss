@@ -1,9 +1,16 @@
 .searchData {
     border: solid 2px white;
+    label {
+        font-size: 14pt;
+    }
+    width: fit-content;
+    margin: .5rem;
+    padding: 1rem;
 }
 
 .search {
     border: solid 2px red;
+    margin: .5rem;
     width: 150px;
     height: 40px;
     font-size: 16pt;

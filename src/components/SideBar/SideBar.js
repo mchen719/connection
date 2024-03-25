@@ -2,28 +2,21 @@ import { useState } from 'react';
 import AboutMeSideBar from '../AboutMeSideBar/AboutMeSideBar.js';
 import styles from './SideBar.module.scss';
 
-export default function SideBar({ user, setUser }) {
-	// const updateIndividualExperience = async (id) => {
-	//     try {
-	//         const response = await fetch(`/api/experience/${id}`, {
-	//             method: 'PUT',
-	//             headers: {
-	//                 'Content-Type': 'application/json',
-	//                 'Authorization': `Bearer ${token}`
-	//             },
-	//             body: JSON.stringify(newExperienceData)
-	//         })
-	//         const data = await response.json()
-	//         return data
-	//     } catch (error) {
-	//         console.error(error)
-	//     }
-	// } // broken and buggy fail attempt.
+export default function SideBar({ user }) {
+	if (!user) {
+		return null;
+	}
 
 	return (
-		<main className={styles.SideBar}>
-			<AboutMeSideBar user={user} setUser={setUser} />
-			connections: coming soon
-		</main>
+		<div className={styles.sideBar}>
+			<div className={styles.photo}>
+				<img src={user.profilePicture} className={styles.profilePicture} />
+			</div>
+
+			<div className={styles.content}>
+				<h1>{user.name}</h1>
+				<h2>Contact info: {user.email}</h2>
+			</div>
+		</div>
 	);
 }

@@ -9,7 +9,8 @@ const createPost = async (req, res, next) => {
 		user.posts.addToSet(createdPost);
 		await user.save();
 		console.log(user);
-		res.locals.data.post = createdPost;
+		res.json(createdPost);
+		// res.locals.data.post = createdPost;
 		next();
 	} catch (error) {
 		res.status(400).json({ msg: error.message });
@@ -46,7 +47,7 @@ const respondWithPost = (req, res) => {
 
 async function showAllPosts(req, res) {
 	try {
-		const showAllPosts = await Post.find().populate('createdBy');
+		const showAllPosts = await Post.find().populate('senderId');
 		res.json(showAllPosts);
 	} catch (error) {
 		res.status(400).json({ msg: error.message });

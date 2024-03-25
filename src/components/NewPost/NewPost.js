@@ -79,7 +79,7 @@ export default function NewPost() {
 							/>
 						</label>
 					</div>
-					<button type="submit" value="submit" />
+					<button type="submit" value="submit">Submit</button>
 				</form>
 			</div>
 		</>
