@@ -2,6 +2,7 @@
 <h2>a Linkedin Alternative</h2>
 
 <h3>Live Deployment Link: </h3>
+
 <a href="connections.mattchen.me"><h3>Connections - a Linkedin Alternative</h3></a>
 <br>
 
