@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import AboutMe from '../../components/AboutMe/AboutMe'
 import NavBar from '../../components/NavBar/NavBar'
+import UserEdit from '../../components/UserEdit/UserEdit'
 // import NotificationsList from '../../components/NotificationsList/NotificationsList
 import ProDetails from '../../components/ProDetails/ProDetails'
 // import SearchBar from '../../components/SearchBar/SearchBar'
@@ -51,7 +52,13 @@ export default function ProfilePage({ user, setUser }) {
                 user={user}
                 setUser={setUser}
             />
-            <ChatBox />
+
+            <UserEdit
+                user={user}
+                setUser={setUser}
+            />
+
+            {/* <ChatBox /> */}
         </main>
     )
 }
