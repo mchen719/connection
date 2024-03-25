@@ -24,8 +24,4 @@ export function getAllUsers() {
 export function getUserById(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'GET', id);
 }
-=========
-export function update(data, id) {
-    return sendrequest(`${BASE_URL}/${id}`, 'PUT', data)
-}
->>>>>>>>> Temporary merge branch 2
+
