@@ -9,6 +9,7 @@ import ProDetails from '../../components/ProDetails/ProDetails'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import UserListings from '../../components/UserListings/UserListings'
 
+
 import * as usersAPI from '../../utilities/users-api'
 import * as educationAPI from '../../utilities/education-api'
 import * as experienceAPI from '../../utilities/experience-api'
@@ -60,6 +61,12 @@ export default function ProfilePage({ user, setUser }) {
                 userListings={userListings}
             />
             <UserListings userListings={handleSearch()} />
+
+            <SearchBar
+                searchInput={searchInput}
+                setSearchInput={setSearchInput}
+            />
+            {/* <UsersList userListings={handleSearch()} /> */}
 
             {/* <ChatBox /> */}
         </main>
