@@ -6,6 +6,8 @@
   "version": "0.1.0",
   "description": "A way for people to start a react project and not be locked into create react app",
   "main": "server.js",
+  "proxy": "http://localhost:3000",
+  
   "scripts": {
     "seed": "node config/seed.js",
     "seedDeleter": "node config/seedDeleter.js",
