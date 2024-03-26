@@ -20,6 +20,7 @@ export default function ProfilePage({ user, setUser }) {
     const [userListings, setUserListings] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [searchInput, setSearchInput] = useState('')
+    const [showUserForm, setShowUserForm] = useState(false)
 
     const handleSearch = () => {
         return !searchInput ? userListings : userListings.filter(userListing => userListing.name.toLowerCase().includes(searchInput.toLowerCase().trim()))
@@ -44,6 +45,8 @@ export default function ProfilePage({ user, setUser }) {
                 user={user}
                 setUser={setUser}
             />
+            <div className={styles.editFormButton} onClick={() => setShowUserForm(!showUserForm)}>Edit your profile here!</div>
+            {showUserForm ? <UserEdit user={user} setUser={setUser} onSubmit={() => setShowUserForm(!showUserForm) }/> : null }
             <AboutMe
                 user={user}
                 setUser={setUser}
@@ -60,12 +63,6 @@ export default function ProfilePage({ user, setUser }) {
                 userListings={userListings}
             />
             <UserListings userListings={handleSearch()} />
-
-            <SearchBar
-                searchInput={searchInput}
-                setSearchInput={setSearchInput}
-            />
-            {/* <UsersList userListings={handleSearch()} /> */}
 
             {/* <ChatBox /> */}
         </main>

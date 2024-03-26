@@ -6,4 +6,18 @@ body {
     border: solid 2px red;
     margin: .5rem;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+.topSpace {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nextTopSpace {
+    padding: 1rem;
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
 }

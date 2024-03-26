@@ -1,0 +1,25 @@
+.sideBar {
+    border: solid 2px yellow;
+    margin: .5rem;
+    padding: .5rem;
+    width: 300px;
+    img {
+        width: 250px;
+        border-radius: 50%;
+        border: solid 2px red;
+    }
+}
+
+.profilePicture {
+    object-fit: contain;
+}
+
+.photo {
+    object-fit: contain;
+}
+
+.content {
+    border: solid 2px white;
+    margin: .5rem;
+    padding: .5rem;
+}
