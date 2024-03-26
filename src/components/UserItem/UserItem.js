@@ -1,16 +1,16 @@
 import styles from './UserItem.module.scss'
 
-export default function userListing({ userItem }) {
+export default function UserItem({ userItem }) {
     return (
         <div className={styles.userItemCard}>
             <div className={styles.userItemPic}>
-                <img className={styles.userItemPicFile} src="" />
+                <img className={styles.userItemPicFile} src={userItem.profilePicture} />
             </div>
 
         <div key={ userItem._id }className={styles.userItem}>
-            <h2 className={styles.userData}>{userItem.name}</h2>
-            <div className={styles.userData}>Email: {userItem.email}</div>
-            </div>
+            <div className={styles.userData}>{userItem.name}</div>
+            <div className={styles.userEmail}>{userItem.email}</div>
+        </div>
         </div>
     );
 }
