@@ -1,0 +1,27 @@
+.userItemCard {
+border: solid 2px yellow;
+margin: .5rem;
+padding: .5rem;
+width: 200px;
+}
+
+.userItemPic {
+    width: fit-content;
+}
+
+.userItem {
+    font-size: 18pt;
+    border: solid 1px white;
+    padding: .5rem;
+    overflow-x: scroll;
+}
+
+.userItemPicFile {
+    width: 100px;
+    border-radius: 50%;
+    border: solid 2px red;
+}
+
+.userEmail {
+    font-size: 14pt;
+}

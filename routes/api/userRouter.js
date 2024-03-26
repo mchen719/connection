@@ -19,4 +19,12 @@ router.delete('/:id', ensureLoggedIn, dataController.delete)
 // GET /api/users/check-token
 router.get('/check-token', ensureLoggedIn, checkToken)
 
+//GET single user 
+router.get('/:id', dataController.show)
+
+//GET all users 
+router.get('/', dataController.getAllUsers)
+
+router.post('/:id/add-friend', dataController.addFriend);
+
 module.exports = router

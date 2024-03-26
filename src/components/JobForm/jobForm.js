@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import sendRequest from '../../utilities/send-request';
+import styles from './JobForm.module.scss'
 import * as jobsAPI from '../../utilities/jobs-api';
 
 const CreateJobForm = ({ user }) => {
@@ -20,14 +21,14 @@ const CreateJobForm = ({ user }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
+
         console.log('Form Data:', formData);
-        
+
         if (!formData) {
             console.error('Error: formData is not initialized.');
             return;
         }
-        
+
         try {
             // Create the job using the API
             console.log('Creating job...');
