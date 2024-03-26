@@ -4,8 +4,9 @@ import { useParams } from 'react-router-dom'
 import { Link, useNavigate } from 'react-router-dom'
 import AboutMe from '../../components/AboutMe/AboutMe'
 import NavBar from '../../components/NavBar/NavBar'
-import UserEdit from '../../components/UserEdit/UserEdit'
+// import NotificationsList from '../../components/NotificationsList/NotificationsList
 import ProDetails from '../../components/ProDetails/ProDetails'
+import UserEdit from '../../components/UserEdit/UserEdit'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import UserListings from '../../components/UserListings/UserListings'
 import * as usersAPI from '../../utilities/users-api'
@@ -15,6 +16,7 @@ import styles from './ProfilePage.module.scss'
 // import ChatBox from '../../components/ChatBox/ChatBox'
 
 export default function ProfilePage({ user, setUser }) {
+
     const { userId } = useParams();
     const [userListings, setUserListings] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -53,21 +55,13 @@ export default function ProfilePage({ user, setUser }) {
 
     return (
         <main className={styles.ProfilePage}>
-            <NavBar
-                user={user}
-                setUser={setUser}
-            />
-            <div className={styles.editFormButton} onClick={() => setShowUserForm(!showUserForm)}>Edit your profile here!</div>
-            {showUserForm ? <UserEdit user={user} setUser={setUser} onSubmit={() => setShowUserForm(!showUserForm) }/> : null }
-            <AboutMe
-                user={user}
-                setUser={setUser}
-            />
+            <NavBar className={styles.navBar} user={user} setUser={setUser} />
+            <AboutMe className={styles.aboutMe} user={user} setUser={setUser} />
+            <div className={styles.body}>
+            <ProDetails className={styles.proDetails} user={user} setUser={setUser} />
+            </div>
 
-            <ProDetails
-                user={user}
-                setUser={setUser}
-            />
+            {showUserForm ? <UserEdit user={user} setUser={setUser} onSubmit={() => setShowUserForm(!showUserForm) }/> : null }
             <label>Search the network for new connections below!</label>
             />
             <label>Search the network for new connections below!</label>
@@ -78,6 +72,15 @@ export default function ProfilePage({ user, setUser }) {
             />
             <UserListings userListings={handleSearch()} />
             {/* <ChatBox /> */}
+
         </main>
     )
 }
+
+{/* <UsersList userListings={handleSearch()} /> */}
+
+{/* <ChatBox /> */}
+{/* <SearchBar
+    searchInput={searchInput}
+    setSearchInput={setSearchInput}
+/> */}

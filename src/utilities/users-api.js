@@ -24,10 +24,4 @@ export default function getUserById(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'GET', id);
 }
 
-// export const getAllJobs = () => {
-//     return sendRequest(BASE_URL);
-//   };
 
-//   export const getJobById = (id) => {
-//     return sendRequest(`${BASE_URL}/${id}`);
-//   };

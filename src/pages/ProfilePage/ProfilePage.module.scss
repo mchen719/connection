@@ -3,30 +3,23 @@ div {
     font-size: x-large;
 }
 
+.navBar {
+    position: fixed;
+}
 .ProfilePage {
     margin: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
-    label {
-        border: solid 1px white;
-        padding: 1rem;
-        margin: .5rem;
-        border-radius: 1vmin;
-        background-color: rgb(22, 102, 197);
-        color: white;
-    }
+    overflow-y: scroll;
 }
 
-.editFormButton {
-    border: solid 1px white;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 1vmin;
-    background-color: rgb(22, 102, 197);
+.body {
+    display: flex;
+    flex-direction: row;
 }
+.proDetails {
+    overflow-y: scroll;
 
-.editFormButton:hover {
-    cursor: pointer;
 }
