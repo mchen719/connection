@@ -5,7 +5,9 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const checkToken = require('./config/checkToken');
 
-app.use(express.json()); // req.body
+// const cors = require('cors')
+// app.use(cors())
+app.use(express.json()) // req.body
 app.use((req, res, next) => {
 	res.locals.data = {};
 	next();
@@ -28,4 +30,14 @@ app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-module.exports = app;
+// const http = require('http').Server(app)
+// require('./chatServer.js').init(http)
+
+// const port = process.env.PORT || 3010
+
+// http.listen(port, function() {
+// 	console.log(`Listening on chat server port ${port}`)
+// })
+
+module.exports = app
+
