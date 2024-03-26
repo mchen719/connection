@@ -1,5 +1,7 @@
 .searchData {
-    border: solid 2px white;
+    border: solid 2px lightgray;
+    background-color: rgb(22, 102, 197);
+    border-radius: 2vmin;
     label {
         font-size: 14pt;
     }
@@ -9,12 +11,14 @@
 }
 
 .search {
-    border: solid 2px red;
+    border: solid 2x lightgray;
     margin: .5rem;
     width: 150px;
     height: 40px;
     font-size: 16pt;
-    color: white;
+    color: black;
+    background-color: white;
+    border-radius: 1vmin;
 }
 
 .searchedUsers {

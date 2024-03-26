@@ -1,8 +1,10 @@
 .userListings {
     display: flex;
-    border: solid 2px red;
+    border: solid 2px rgb(22, 102, 197);
     margin: .5rem;
     padding: .5rem;
     overflow-y: hidden;
     overflow-x: auto;
+    background-color: white;
+    border-radius: 2vmin;
 }

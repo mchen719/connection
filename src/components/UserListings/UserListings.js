@@ -1,6 +1,8 @@
 import React from 'react';
 import UserItem from '../UserItem/UserItem';
 import styles from './UserListings.module.scss'
+import { Link, useNavigate } from 'react-router-dom';
+
 
 export default function UserListings({ userListings }) {
     // Check if userListings is not an array or is empty
@@ -14,10 +16,12 @@ export default function UserListings({ userListings }) {
 
     // Map over jobListings to display each job item
     const displayUsers = userListings.map(searchedUser =>
+        <Link to="/home/req.params.user._id" className={styles.NavButton}>
         <UserItem
             key={searchedUser._id}
             userItem={searchedUser}
         />
+        </Link>
     );
 
     return (
@@ -26,3 +30,5 @@ export default function UserListings({ userListings }) {
         </main>
     );
 }
+
+// `/profile/${searchedUser._id}`

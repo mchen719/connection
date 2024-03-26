@@ -9,7 +9,7 @@ export default function UserItem({ userItem }) {
 
         <div key={ userItem._id }className={styles.userItem}>
             <div className={styles.userData}>{userItem.name}</div>
-            <div className={styles.userEmail}>{userItem.email}</div>
+            <div className={styles.userData}>{userItem.email}</div>
 
             </div>
         </div>

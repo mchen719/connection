@@ -1,4 +1,4 @@
-import sendrequest from "./send-request"
+import sendRequest from "./send-request"
 const BASE_URL = '/api/users'
 
 export function signUp(userData) {
@@ -18,10 +18,10 @@ export function update(data, id) {
 // or BASE_URL, 'GET' ???
 
 export const getAllUsers = () => {
-    return sendrequest(BASE_URL)
+    return sendRequest(BASE_URL)
 }
 export default function getUserById(id) {
-    return sendrequest(`${BASE_URL}/${id}`, 'GET', id);
+    return sendRequest(`${BASE_URL}/${id}`, 'GET', id);
 }
 
 // export const getAllJobs = () => {
