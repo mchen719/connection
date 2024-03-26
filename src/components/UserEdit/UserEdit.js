@@ -5,13 +5,10 @@ import styles from "./UserEdit.module.scss"
 
 import React from 'react'
 
-function UserEdit({ user, setUser }) {
+function UserEdit({ user, setUser, showUserForm, setShowUserForm }) {
     const [userData, setUserData] = useState(user || {
         name: '',
-        email: '',
-        education: [],
-        experience: [],
-        skills: []
+        email: ''
     })
     const [error, setError] = useState('');
 
@@ -26,7 +23,7 @@ function UserEdit({ user, setUser }) {
         // Prevent form from being submitted to the server
         evt.preventDefault();
         try {
-            
+
             const user = await usersService.update(userData, id);
             console.log(user)
             setUser(user);
@@ -43,7 +40,7 @@ function UserEdit({ user, setUser }) {
             <input type="text" name="email" value={userData.email} onChange={handleChange} required />
             <button type="submit">SAVE CHANGES</button>
         </form>
-        <div className='form'>
+        {/* <div className='form'>
             <label>Name</label>
             <input type="text" name="name" defaultValue={user.name} value={userData.name} onChange={handleChange} required />
             <label>Email</label>
@@ -60,8 +57,8 @@ function UserEdit({ user, setUser }) {
                 <input/>
                 <input/>
             </div>
-        </div>
-        
+        </div> */}
+
         <p className="error-message">&nbsp;{error}</p>
     </>
   )
@@ -89,7 +86,7 @@ export default UserEdit
 //             setEditUser(data);
 //         }catch(error){
 //             console.error(error)
-//         }   
+//         }
 //       };
 
 //     useEffect(() => {
@@ -118,7 +115,7 @@ export default UserEdit
 //             // The promise returned by the signUp service method
 //             // will resolve to the user object included in the
 //             // payload of the JSON Web Token (JWT)
-            
+
 //             const user = await usersService.update(data);
 //             console.log(user)
 //             setUser(user);
@@ -129,7 +126,7 @@ export default UserEdit
 
 //     return (
 //         <div>
-            
+
 //             <form autoComplete="off" onSubmit={handleSubmit}>
 //                 <h3>Edit Account Information</h3>
 //                 <label>Name</label>

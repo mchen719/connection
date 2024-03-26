@@ -14,6 +14,7 @@ const JobPage = ({ user, setUser }) => {
     const [jobListings, setJobListings] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [searchInput, setSearchInput] = useState('')
+    const [showCreateForm, setShowCreateForm] = useState(false)
 
     const handleSearch = () => {
         return !searchInput ? jobListings : jobListings.filter(jobListing => jobListing.title.toLowerCase().includes(searchInput.toLowerCase().trim()))
@@ -32,22 +33,24 @@ const JobPage = ({ user, setUser }) => {
         return <div>Loading...</div>;
     }
 
-    console.log("Number of job listings:", jobListings.length);
-
     return (
         <div className={styles.jobPage}>
             <NavBar user={user} setUser={setUser} />
-            <SideBar user={user} setUser={setUser} />
-            <h1>Job Listings</h1>
-            {/* Pass all job listings to the JobListings component */}
-            <h3>Search our catalogue of jobs below!</h3>
-            <SearchBar
-            searchInput={searchInput}
-            setSearchInput={setSearchInput}
-            jobListings={jobListings}
-            />
+            <div className={styles.topSpace}>
+                <div className={styles.nextTopSpace}>
+                    <h1>Job Listings</h1>
+                    <h3>Search our catalogue of jobs below!</h3>
+                    <SearchBar
+                    searchInput={searchInput}
+                    setSearchInput={setSearchInput}
+                    jobListings={jobListings}
+                    />
+                </div>
+                <SideBar user={user} setUser={setUser} />
+            </div>
             <JobListings jobListings={handleSearch()} />
-            <CreateJobForm user={user} setUser={setUser} />
+            <div className={styles.createFormToggle} onClick={() => setShowCreateForm(!showCreateForm)}>Create a new job posting here!</div>
+            {showCreateForm ? <CreateJobForm user={user} setUser={setUser} /> : null}
         </div>
     );
 };

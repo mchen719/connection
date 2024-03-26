@@ -39,5 +39,14 @@ app.get('*', (req, res) => {
 // 	console.log(`Listening on chat server port ${port}`)
 // })
 
+// const http = require('http').Server(app)
+// require('./chatServer.js').init(http)
+
+// const port = process.env.PORT || 3010
+
+// http.listen(port, function() {
+// 	console.log(`Listening on chat server port ${port}`)
+// })
+
 module.exports = app
 

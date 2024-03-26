@@ -4,13 +4,26 @@
     flex-direction: column;
 }
 
+.formatContainer {
+    background-color: rgb(22, 102, 197);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    border: solid 2px white;
+    align-items: center;
+    margin: 1rem;
+    border-radius: 2vmin;
+}
+
 .cover {
-    border: solid 2px red;
+    border-radius: 2vmin;
+    border: solid 2px white;
     margin: 0 auto;
     display: flex;
     width: 90%;
     height: 200px;
     img {
+        border-radius: 2vmin;
         height: 100%;
         width: 100%;
         justify-content: center;
@@ -23,15 +36,19 @@
     border-radius: 50%;
 }
 .proPicContainer  {
-    border: solid 3px purple;
+    border: solid 3px white;
     border-radius: 50%;
-    margin: 0 auto;
     display: flex;
-    margin: 0 auto;
     object-fit: contain;
 }
 
 .content {
+    color: black;
+    background-color: lightgray;
+    padding: 2rem;
+    width: fit-content;
+    height: fit-content;
+    border-radius: 2vmin;
     margin-top: 1rem;
     padding-top: 1rem;
     margin-bottom: 1rem;
@@ -39,6 +56,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: solid 2px yellow;
+    border: solid 2px white;
     text-align: left;
 }
