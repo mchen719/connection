@@ -10,6 +10,7 @@ import SearchBar from '../../components/SearchBar/SearchBar'
 import UserListings from '../../components/UserListings/UserListings'
 
 
+
 import * as usersAPI from '../../utilities/users-api'
 import * as educationAPI from '../../utilities/education-api'
 import * as experienceAPI from '../../utilities/experience-api'
@@ -42,6 +43,10 @@ export default function ProfilePage({ user, setUser }) {
     return (
         <main className={styles.ProfilePage}>
             <NavBar
+                user={user}
+                setUser={setUser}
+            />
+            <UserEdit
                 user={user}
                 setUser={setUser}
             />
