@@ -10,7 +10,7 @@ export default function HomePage(user, setUser) {
 	const [posts, setPosts] = useState([]);
 	useEffect(() => {
 		async function fetchPosts() {
-			const foundPosts = await PostAPI.getAllPosts(PostFeed);
+			const foundPosts = await PostAPI.getAllPosts();
 			console.log('These are the posts' + foundPosts);
 			setPosts(foundPosts);
 		}
