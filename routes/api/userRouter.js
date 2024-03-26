@@ -25,4 +25,6 @@ router.get('/:id', dataController.show)
 //GET all users 
 router.get('/', dataController.getAllUsers)
 
+router.post('/:id/add-friend', dataController.addFriend);
+
 module.exports = router

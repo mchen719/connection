@@ -5,6 +5,8 @@ import ShowUserPage from '../pages/ShowUserPage/ShowUserPage'
 
 // MUST INCLUDE THE VIEW PROFILE PATH HERE!!!!!!!
 
+// MUST INCLUDE THE VIEW PROFILE PATH HERE!!!!!!!
+
 const routes = [
 	{
 		Component: HomePage,

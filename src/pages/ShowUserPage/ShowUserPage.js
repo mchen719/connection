@@ -38,5 +38,4 @@ export default function ShowUserPage ({ user, setUser }) {
             />
         </main>
     )
-
 }

@@ -8,7 +8,6 @@ import UserEdit from '../../components/UserEdit/UserEdit'
 import ProDetails from '../../components/ProDetails/ProDetails'
 import SearchBar from '../../components/SearchBar/SearchBar'
 import UserListings from '../../components/UserListings/UserListings'
-
 import * as usersAPI from '../../utilities/users-api'
 import * as educationAPI from '../../utilities/education-api'
 import * as experienceAPI from '../../utilities/experience-api'
@@ -22,6 +21,19 @@ export default function ProfilePage({ user, setUser }) {
     const [searchInput, setSearchInput] = useState('')
     const [showUserForm, setShowUserForm] = useState(false)
 
+    const handleSearch = () => {
+        return !searchInput ? userListings : userListings.filter(userListing => userListing.name.toLowerCase().includes(searchInput.toLowerCase().trim()))
+    }
+
+    useEffect(() => {
+        async function fetchUsers() {
+            const users = await usersAPI.getAllUsers();
+            setUserListings(users);
+            setIsLoading(false);
+        }
+        fetchUsers();
+    }, []);
+  
     const handleSearch = () => {
         return !searchInput ? userListings : userListings.filter(userListing => userListing.name.toLowerCase().includes(searchInput.toLowerCase().trim()))
     }
@@ -57,13 +69,14 @@ export default function ProfilePage({ user, setUser }) {
                 setUser={setUser}
             />
             <label>Search the network for new connections below!</label>
+            />
+            <label>Search the network for new connections below!</label>
             <SearchBar
                 searchInput={searchInput}
                 setSearchInput={setSearchInput}
                 userListings={userListings}
             />
             <UserListings userListings={handleSearch()} />
-
             {/* <ChatBox /> */}
         </main>
     )

@@ -15,7 +15,7 @@ export default function UserListings({ userListings }) {
     }
 
     // Map over jobListings to display each job item
-    const displayUsers = userListings.map(searchedUser =>
+    const displayUsers = userListings.map(searchedUser => 
         <Link to="/home/req.params.user._id" className={styles.NavButton}>
         <UserItem
             key={searchedUser._id}
@@ -31,4 +31,3 @@ export default function UserListings({ userListings }) {
     );
 }
 
-// `/profile/${searchedUser._id}`
