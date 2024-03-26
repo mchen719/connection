@@ -13,15 +13,25 @@ export async function signUp(userData) {
 export async function login(credentials) {
   const token = await usersAPI.login(credentials);
   // Persist the token to localStorage
+  if(token === "Bad Credentials"){
+    return
+  }
   localStorage.setItem('token', token);
   return getUser();
+}
+
+export async function update(data, id) {
+  const userData = await usersAPI.update(data, id)
+  localStorage.setItem('token', userData.token)
+  console.log('changed token', getUser())
+  return userData.user
 }
 
 export function getToken() {
   const token = localStorage.getItem('token');
   // getItem will return null if no key
   if (!token) return null;
-  const payload = JSON.parse(atob(token.split('.')[1]));
+   const payload = JSON.parse(atob(token.split('.')[1]));
   // A JWT's expiration is expressed in seconds, not miliseconds
   if (payload.exp < Date.now() / 1000) {
     // Token has expired
