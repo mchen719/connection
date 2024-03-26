@@ -43,7 +43,7 @@ function UserEdit({ user, setUser }) {
             <input type="text" name="email" value={userData.email} onChange={handleChange} required />
             <button type="submit">SAVE CHANGES</button>
         </form>
-        <div className='form'>
+        {/* <div className='form'>
             <label>Name</label>
             <input type="text" name="name" defaultValue={user.name} value={userData.name} onChange={handleChange} required />
             <label>Email</label>
@@ -60,7 +60,7 @@ function UserEdit({ user, setUser }) {
                 <input/>
                 <input/>
             </div>
-        </div>
+        </div> */}
         
         <p className="error-message">&nbsp;{error}</p>
     </>
