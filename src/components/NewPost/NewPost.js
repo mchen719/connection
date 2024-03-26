@@ -54,7 +54,7 @@ export default function NewPost() {
 					className={styles.form}
 					onSubmit={(e) => {
 						e.preventDefault();
-						sendRequest('/api/post', 'POST', formData);
+						sendRequest('/api/posts', 'POST', formData);
 					}}
 				>
 					<div>
@@ -79,7 +79,9 @@ export default function NewPost() {
 							/>
 						</label>
 					</div>
-					<button type="submit" value="submit">Submit</button>
+					<button type="submit" value="submit">
+						Submit
+					</button>
 				</form>
 			</div>
 		</>

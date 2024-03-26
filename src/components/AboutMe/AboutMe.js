@@ -25,14 +25,10 @@ export default function AboutMe({ user, setUser }) {
                             <button className={styles.editBtn} onClick={() => setEditUser(!showEditUser)}>
                                 {showEditUser ? "Exit" : "Edit Profile"}
                             </button>
-
                         </div>
                     </div>
-
                 </div>
-
             </div>
-
         </div>
     )
 }
