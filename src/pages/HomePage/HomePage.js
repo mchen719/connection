@@ -19,17 +19,19 @@ export default function HomePage(user, setUser) {
 
 	return (
 		<>
-			<h1>TEST HOMEPAGE TEXT </h1>
-			<NavBar user={user} setUser={setUser} />
+			<div className={styles.HomePage}>
+				<h1>TEST HOMEPAGE TEXT </h1>
+				<NavBar user={user} setUser={setUser} />
 
-			<div className="mainPage">
-				<div>
-					<NewPost />
+				<div className="mainPage">
+					<div>
+						<NewPost />
 
-					<PostFeed user={user} posts={posts} />
+						<PostFeed user={user} posts={posts} />
+					</div>
+
+					<SideBar user={user} setUser={setUser} />
 				</div>
-
-				<SideBar user={user} setUser={setUser} />
 			</div>
 		</>
 	);
