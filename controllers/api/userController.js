@@ -107,8 +107,32 @@ async getAllUsers (req, res) {
     res.status(500).json({ msg: error.message });
   }
 }
-}
+},
 
+async getAllUsers (req, res) {
+  try {
+    const users = await User.find({});
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({ msg: error.message });
+  }
+},
+
+async addFriend (req, res, next) {
+  try {
+    const userId = req.params.id; // Id of the current user
+    const friendId = req.body.friendId; // Id of the friend to be added
+
+    // If friendId is valid and exists in the database
+    const user = await User.findById(userId);
+    user.connections.push(friendId);
+    await user.save();
+
+    res.status(200).json({ message: "Friend added successfully" });
+  } catch (error) {
+    res.status(400).json({ msg: error.message });
+  }
+}
 
 const apiController = {
   auth (req, res) {
