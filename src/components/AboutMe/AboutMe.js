@@ -21,31 +21,30 @@ export default function AboutMe({ user, setUser }) {
 
                         <div className={styles.desc}>{user.summary}lorem ipsims wef weibwec</div>
                         <div className="actions">
-                            <button><i className="far fa-heart"></i></button>
-                            <button><i className="far fa-envelope"></i></button>
-                            <button><i className="fas fa-user-friends"></i></button>
-                        </div></div>
+                            {showEditUser ? <UserEdit user={user} setUser={setUser} /> : ""}
+                            <button className={styles.editBtn} onClick={() => setEditUser(!showEditUser)}>
+                                {showEditUser ? "Exit" : "Edit Profile"}
+                            </button>
 
-                </div>
-
-
-                {/* <div className={styles.cover}>
-                    <img src={user.coverPhoto} />
-                    <div className={styles.proPicContainer}>
-                        <img src={user.profilePicture} className={styles.profilePicture} />
+                        </div>
                     </div>
+
                 </div>
-                <div className={styles.content}>
-                    <h1>{user.name}</h1>
-                    <h2>Contact info: {user.email}</h2>
-                    <h4>About Me: {user.summary}</h4> */}
-                    {showEditUser ? <UserEdit user={user} setUser={setUser} /> : ""}
-                    <button onClick={() => setEditUser(!showEditUser)}>
-                        {showEditUser ? "Exit" : "Edit Profile"}
-                    </button>
-                {/* </div> */}
+
             </div>
 
         </div>
     )
 }
+
+{/* <div className={styles.cover}>
+<img src={user.coverPhoto} />
+<div className={styles.proPicContainer}>
+<img src={user.profilePicture} className={styles.profilePicture} />
+</div>
+</div>
+<div className={styles.content}>
+<h1>{user.name}</h1>
+<h2>Contact info: {user.email}</h2>
+<h4>About Me: {user.summary}</h4> 
+ </div> */}

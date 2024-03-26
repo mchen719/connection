@@ -38,28 +38,19 @@ export default function ProfilePage({ user, setUser }) {
 
     return (
         <main className={styles.ProfilePage}>
-            <NavBar
-                user={user}
-                setUser={setUser}
-            />
-            {/* <SearchBar
-                searchInput={searchInput}
-                setSearchInput={setSearchInput}
-            /> */}
-            <div>
-            <AboutMe
-                user={user}
-                setUser={setUser}
-            />
-
+            <NavBar className={styles.navBar} user={user} setUser={setUser} />
+            <AboutMe className={styles.aboutMe} user={user} setUser={setUser} />
+            <div className={styles.body}>
+            <ProDetails className={styles.proDetails} user={user} setUser={setUser} />
             </div>
-            <ProDetails
-                user={user}
-                setUser={setUser}
-            />
-            {/* <UsersList userListings={handleSearch()} /> */}
-
-            {/* <ChatBox /> */}
         </main>
     )
 }
+
+{/* <UsersList userListings={handleSearch()} /> */}
+
+{/* <ChatBox /> */}
+{/* <SearchBar
+    searchInput={searchInput}
+    setSearchInput={setSearchInput}
+/> */}

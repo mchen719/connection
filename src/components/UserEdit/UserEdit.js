@@ -41,6 +41,15 @@ function UserEdit({ user, setUser }) {
             <input type="text" name="name" value={userData.name} onChange={handleChange} required />
             <label>Email</label>
             <input type="text" name="email" value={userData.email} onChange={handleChange} required />
+            {/* <div>
+                <label>experience</label>
+                {user?.experience?.map((item) => {
+                    return(<div key={item._id}>
+                        <h1>{item.title}</h1>
+                        <h2>{item.company}</h2>
+                    </div>)
+                })}
+            </div> */}
             <button type="submit">SAVE CHANGES</button>
         </form>
         {/* <div className='form'>

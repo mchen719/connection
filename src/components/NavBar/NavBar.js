@@ -8,7 +8,8 @@ import UserLogOut from '../UserLogout/UserLogout'
 export default function NavBar({ user, setUser }) {
 	const [searchInput, setSearchInput] = useState("")
 	return (
-		<nav className={styles.NavBar}>
+		
+		<div className={styles.NavBar}>
 			<div className={styles.logo}>
 				<Logo />
 			</div>
@@ -27,7 +28,7 @@ export default function NavBar({ user, setUser }) {
 					setUser={setUser}
 				/>
 			</div>
-		</nav>
+		</div>
 
 	)
 }
