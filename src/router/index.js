@@ -4,9 +4,9 @@ import { useState } from 'react'
 import styles from './AppRouter.module.scss';
 import { getUser } from '../utilities/users-service';
 import AuthPage from '../pages/AuthPage/AuthPage';
-import ProfilePage from '../pages/ProfilePage/ProfilePage'
-import HomePage from '../pages/HomePage/HomePage'
-import JobPage from '../pages/JobPage/JobPage'
+// import ProfilePage from '../pages/ProfilePage/ProfilePage'
+// import HomePage from '../pages/HomePage/HomePage'
+// import JobPage from '../pages/JobPage/JobPage'
 
 // MAJOR NOTE :  MUST RE INTRODUCE FUNCTIONING TERNARY EXPRESSION. is user logged in? Give them profile. if not?? go kick rocks.
 
@@ -29,6 +29,7 @@ const AppRouter = () => {
 							page={key}
 							user={user}
 							setUser={setUser}
+
 						/>
 						}
 					></Route>
@@ -48,4 +49,3 @@ const AppRouter = () => {
 
 export default AppRouter;
 
-// 		<AuthPage setUser={setUser}/>

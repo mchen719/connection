@@ -27,6 +27,9 @@ const seed = async () => {
             name: "Test User1",
             email: "testUser@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture1.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
+            summary: "I'm just trying to keep on keeping on!",
             experience: [],
             education: [],
             skills: [],
@@ -39,6 +42,9 @@ const seed = async () => {
             name: "Test2 User2",
             email: "testUser2@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture3.png',
+            coverPhoto: '/img/CoverPicture.jpg',
+            summary: "I'm competent and you should hire me.",
             experience: [],
             education: [],
             skills: [],
@@ -47,9 +53,12 @@ const seed = async () => {
             posts: []
         },
         {
-            name: "Test3 User3",
-            email: "testUser3@email.com",
+            name: "Arthur Clone",
+            email: "ceo@me.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture4.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
+            summary: "Now and forever the GOAT. Try an' keep up!",
             experience: [],
             education: [],
             skills: [],
@@ -59,9 +68,12 @@ const seed = async () => {
 
         },
         {
-            name: "Test4 User4",
-            email: "testUser4@email.com",
+            name: "Best Tester",
+            email: "besttest@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture5.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
+            summary: "I'm 2LEET2YEET! You wish you were this good. Do you even lift, bro?",
             experience: [],
             education: [],
             skills: [],
@@ -74,6 +86,9 @@ const seed = async () => {
             name: "Test5 User5",
             email: "testUser5@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicture2.jpeg',
+            coverPhoto: '/img/CoverPicture.jpg',
+            summary: "I love working so much, it's all I ever want to talk about! I'm passionate about hobbies outside of work that also directly involve work because that's modern society for you...",
             experience: [],
             education: [],
             skills: [],
@@ -86,6 +101,8 @@ const seed = async () => {
             name: "Test6 User6",
             email: "testUser6@email.com",
             password: process.env.SEED_PASSWORD,
+            coverPhoto: '/img/CoverPicture.jpg',
+            summary: "I think my experience is summary enough.",
             experience: [],
             education: [],
             skills: [],
@@ -98,6 +115,8 @@ const seed = async () => {
             name: "Test7 User7",
             email: "testUser7@email.com",
             password: process.env.SEED_PASSWORD,
+            coverPhoto: '/img/CoverPicture.jpg',
+            summary: "I'm not a fan of social media...",
             experience: [],
             education: [],
             skills: [],
@@ -116,54 +135,62 @@ const seed = async () => {
             userId: usersSeed[0]._id, // test user 1
             title: "Professional Adult",
             company: "self employed",
-            startDate: new Date('February 24 2020 02:20:22'),
-            endDate: new Date('April 22 2023 09:21:22'),
+            location: 'Atlanta, GA',
+            startDate: new Date('February 24 2020 02:20:22').getFullYear(),
+            endDate: new Date('April 22 2023 09:21:22').getFullYear(),
             description: "Adulting, all day every day. Super hireable."
         },
         {
             userId: usersSeed[1]._id, // test user 2
             title: "Tax Auditor",
             company: "HNR Block",
-            startDate: new Date('March 12 2018 21:20:32'),
-            endDate: new Date('April 22 2020 22:32:12'),
+            location: 'Savannah, GA',
+            startDate: new Date('March 12 2018 21:20:32').getFullYear(),
+            endDate: new Date('April 22 2020 22:32:12').getFullYear(),
             description: "Made sure that the rich paid less and the poor paid more."
         },
         {
             userId: usersSeed[1]._id, // test user 2
             title: "Corporate Accountant",
             company: "Enron",
-            startDate: new Date('April 30 2020 15:12:11'),
-            endDate: new Date('October 22 2023 11:11:11'),
+            location: 'Richmond, VA',
+            startDate: new Date('April 30 2020 15:12:11').getFullYear(),
+            endDate: new Date('October 22 2023 11:11:11').getFullYear(),
             description: "Found all of the money that was once embezzled, breathed life into long dead company."
         },
         {
             userId: usersSeed[2]._id, // test user 3
             title: "Software Engineering Instructor",
             company: "General Assembly",
-            startDate: new Date('February 24 2015 16:35:23'),
+            location: 'Remote',
+            startDate: new Date('February 24 2015 16:35:23').getFullYear(),
             description: "Singlehandedly trained a generation of AI architects and brought rise to the birth of skynet."
         },
         {
             userId: usersSeed[3]._id, // test user 4
             title: "Scientist",
             company: "Beakers Labs",
-            startDate: new Date('May 23 1999 18:11:33'),
-            endDate: new Date('July 30 2005 19:11:11'),
+            location: 'Toronto, CA',
+            startDate: new Date('May 23 1999 18:11:33').getFullYear(),
+            endDate: new Date('July 30 2005 19:11:11').getFullYear(),
             description: "SCIENCE! She blinded me with it!"
         },
         {
             userId: usersSeed[3]._id, // test user 4
             title: "Smarter Scientist",
             company: "Beakers Labs",
-            startDate: new Date('August 01 2005 15:41:22'),
-            endDate: new Date('September 19 2012 20:44:24'),
+            location: 'Toronto, CA',
+            startDate: new Date('August 01 2005 15:41:22').getFullYear(),
+            endDate: new Date('September 19 2012 20:44:24').getFullYear(),
             description: "Cured cancer and fully sequenced the human genome."
         },
         {
             userId: usersSeed[3]._id, // test user 4
             title: "Mad Scientist",
             company: "Beaker Labs",
-            startDate: new Date('November 12 2012 15:11:21'),
+            location: 'Toronto, CA',
+            startDate: new Date('November 12 2012 15:11:21').getFullYear(),
+
             description: "Not mad as in evil, mad as in can't understand how the world is falling apart this badly."
         },
     ])
@@ -183,71 +210,71 @@ const seed = async () => {
             school: "The School of Hard Knox",
             degree: "Certification",
             fieldOfStudy: "Adulting",
-            startDate: new Date('February 9 2009 23:24:00'),
-            endDate: new Date('December 17, 2013 05:24:00')
+            startDate: new Date('February 9 2009 23:24:00').getFullYear(),
+            endDate: new Date('December 17, 2013 05:24:00').getFullYear()
         },
         {
             userId: usersSeed[1],
             school: "New York University",
             degree: "Bachelors of Arts",
             fieldOfStudy: "Accounting",
-            startDate: new Date('May 22 2013 13:02:00'),
-            endDate: new Date('May 31 2017 18:02:24')
+            startDate: new Date('May 22 2013 13:02:00').getFullYear(),
+            endDate: new Date('May 31 2017 18:02:24').getFullYear()
         },
         {
             userId: usersSeed[1],
             school: "New York University",
             degree: "Masters",
             fieldOfStudy: "Accounting",
-            startDate: new Date('June 12 2016 21:20:01'),
-            endDate: new Date('April 30 2020 19:10:02')
+            startDate: new Date('June 12 2016 21:20:01').getFullYear(),
+            endDate: new Date('April 30 2020 19:10:02').getFullYear()
         },
         {
             userId: usersSeed[2],
             school: "General Assembly",
             degree: "Certification",
             fieldOfStudy: "Software Engineering",
-            startDate: new Date('October 20 2014 04:10:01'),
-            endDate: new Date('January 3 2015 06:22:10')
+            startDate: new Date('October 20 2014 04:10:01').getFullYear(),
+            endDate: new Date('January 3 2015 06:22:10').getFullYear()
         },
         {
             userId: usersSeed[2],
             school: "Georgia Tech",
             degree: "Bachelor's of Arts",
             fieldOfStudy: "Computer Science",
-            startDate: new Date('August 10 2010 14:22:10'),
-            endDate: new Date('August 3 2014 17:13:09')
+            startDate: new Date('August 10 2010 14:22:10').getFullYear(),
+            endDate: new Date('August 3 2014 17:13:09').getFullYear()
         },
         {
             userId: usersSeed[3],
             school: "Oxford University",
             degree: "PHD",
             fieldOfStudy: "Biology",
-            startDate: new Date('July 1 1989 09:20:02'),
-            endDate: new Date('May 1 1999 15:50:30')
+            startDate: new Date('July 1 1989 09:20:02').getFullYear(),
+            endDate: new Date('May 1 1999 15:50:30').getFullYear()
         },
         {
             userId: usersSeed[4],
             school: "Sarah Lawrence College",
             degree: "Bachelor's of Arts",
             fieldOfStudy: "Liberal Arts",
-            startDate: new Date('August 1 2009 08:20:20'),
-            endDate: new Date('May 24 2013 09:22:12')
+            startDate: new Date('August 1 2009 08:20:20').getFullYear(),
+            endDate: new Date('May 24 2013 09:22:12').getFullYear()
         },
         {
             userId: usersSeed[5],
             school: "San Francisco State University",
             degree: "Associate's of Business",
             fieldOfStudy: "Business Administration",
-            startDate: new Date('august 24 2019 12:11:01'),
-            endDate: new Date('August 21 2023 01:11:10')
+            startDate: new Date('august 24 2019 12:11:01').getFullYear(),
+            endDate: new Date('August 21 2023 01:11:10').getFullYear()
         },
         {
             userId: usersSeed[6],
             school: "Florida University",
             degree: "Bachelor's of Arts",
             fieldOfStudy: "Law",
-            startDate: new Date('April 20 2019 04:20:20')
+            startDate: new Date('April 20 2019 04:20:20').getFullYear()
         }
     ])
 
@@ -472,8 +499,7 @@ const seed = async () => {
             location: "San Francisco, CA",
             description: "We're a trio of twenty-two year old founders with lofty ambitions of spending all our hedge fund money on the next ego-vanity project you can think of! We're a family here, that means extra hours for no extra pay and no bonuses forever.",
             requirements: ["Ten Years' Full Stack Development", "Microsoft Office", "Git", "Excessive Experience in an Obscure Programming Framework You've Never Heard Of"],
-            createdAt: new Date('March 17 2024 17:22:02')
-        },
+            createdAt: new Date('March 17 2024 17:22:02')        },
         {
             title: "Legal Defense Counsel",
             company: "MaceRich",

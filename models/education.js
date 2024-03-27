@@ -19,11 +19,11 @@ const educationSchema = new Schema({
 		required: true
 	},
 	startDate: {
-		type: Date,
+		type: Number,
 		required: true
 	},
 	endDate: {
-		type: Date,
+		type: Number,
 		description: String
 	}
 });
