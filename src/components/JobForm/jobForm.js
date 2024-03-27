@@ -3,7 +3,7 @@ import sendRequest from '../../utilities/send-request';
 import styles from './JobForm.module.scss'
 import * as jobsAPI from '../../utilities/jobs-api';
 
-const CreateJobForm = ({ user }) => {
+const CreateJobForm = ({ user, showCreateForm, setShowCreateForm }) => {
     const [formData, setFormData] = useState({
         title: 'Sample Title',
         company: 'Sample Company',
@@ -34,6 +34,7 @@ const CreateJobForm = ({ user }) => {
             console.log('Creating job...');
             await sendRequest('/api/jobs', 'POST', formData);
             console.log('Job created successfully');
+            setShowCreateForm(showCreateForm)
         } catch (error) {
             console.error('Error creating job:', error);
         }
@@ -79,7 +80,8 @@ const CreateJobForm = ({ user }) => {
                     </div>
                     <div>
                         <label htmlFor="description">Description</label>
-                        <textarea
+                        <input
+                        type="text"
                             id="description"
                             name="description"
                             value={formData.description}
@@ -87,7 +89,7 @@ const CreateJobForm = ({ user }) => {
                             placeholder="Enter job description"
                         />
                     </div>
-                    <button type="submit">Create Job</button>
+                    <button type="submit" onSubmit={handleSubmit}>Create Job</button>
                 </form>
             </div>
         </div>

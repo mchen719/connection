@@ -1,6 +1,9 @@
 import styles from "./Chatbox.module.scss";
-// const socketio = require('socket.io')
-import io from "socket.io-client"; // Do I need this here? THIS may be the thing that is not helping me
+
+// import * as socket from '../../../chatServer.js'
+
+const io = require('socket.io-client')
+// import io from "socket.io-client"; // Do I need this here? THIS may be the thing that is not helping me
 import { useEffect, useState } from "react";
 
 // BEST PRACTICE : Deploy the chatbox SEPARATE from application. 'the hardest thing to do is deploy it in the same browser. It needs its' own server/service app that gets plugged INTO the page.
@@ -8,7 +11,9 @@ import { useEffect, useState } from "react";
 // completely self contained. chat box communicate with chat server and plug the basic tag into the profil page and that's IT.
 
 // Below is functioning differently than Arthur code. is this wrong? THIS is the localhost number that has to match the httpserver in my server file yes?
- const socket = io.connect("http://localhost:3012");
+
+//  const socket = io.connect("http://localhost:3012");
+
 
 export default function ChatBox() {
   const [room, setRoom] = useState("");
