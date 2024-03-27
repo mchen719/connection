@@ -91,4 +91,14 @@ npm run dev
 
 
 
-<h1>Screenshots Coming Soon</h1>
+<h1>Screenshots</h1>
+<h2>Login Screen</h2>
+<img src='./public/img/loginPage.png'/>
+<h2>Home Page</h2>
+<img src='./public/img/homePage.png'/>
+<h2>Profile Page</h2>
+<img src='./public/img/profilePage.png'/>
+<h2>Show User Page</h2>
+<img src='./public/img/showUsersPage.png'/>
+<h2>Jobs Page</h2>
+<img src='./public/img/jobsPage.png'/>
