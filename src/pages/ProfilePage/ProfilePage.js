@@ -27,17 +27,7 @@ export default function ProfilePage({ user, setUser }) {
         return !searchInput ? userListings : userListings.filter(userListing => userListing.name.toLowerCase().includes(searchInput.toLowerCase().trim()))
     }
 
-    useEffect(() => {
-        async function fetchUsers() {
-            const users = await usersAPI.getAllUsers();
-            setUserListings(users);
-            setIsLoading(false);
-        }
-        fetchUsers();
-    }, []);
-
-
-
+// you are going to send the userlistings down into the proDetails
     useEffect(() => {
         async function fetchUsers() {
             const users = await usersAPI.getAllUsers();
@@ -62,7 +52,6 @@ export default function ProfilePage({ user, setUser }) {
             {showUserForm ? <UserEdit user={user} setUser={setUser} onSubmit={() => setShowUserForm(!showUserForm) }/> : null }
             <label>Search the network for new connections below!</label>
 
-            <label>Search the network for new connections below!</label>
             <SearchBar
                 searchInput={searchInput}
                 setSearchInput={setSearchInput}

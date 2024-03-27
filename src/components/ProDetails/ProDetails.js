@@ -51,8 +51,8 @@ export default function ProDetails({ user, education, experience, skills }) {
               userSkillsItems :
               <h3>~No Skills To Show~</h3>
             }
-             </div>
         </div>
+    </div>
 
     )
 }
