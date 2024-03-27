@@ -8,12 +8,13 @@ import * as PostAPI from '../../utilities/post-api';
 
 export default function HomePage(user, setUser) {
 	const [posts, setPosts] = useState([]);
+
+	async function fetchPosts() {
+		const foundPosts = await PostAPI.getAllPosts(PostFeed);
+		console.log('These are the posts' + foundPosts);
+		setPosts(foundPosts);
+	}
 	useEffect(() => {
-		async function fetchPosts() {
-			const foundPosts = await PostAPI.getAllPosts();
-			console.log('These are the posts' + foundPosts);
-			setPosts(foundPosts);
-		}
 		fetchPosts();
 	}, []);
 
@@ -33,7 +34,6 @@ export default function HomePage(user, setUser) {
 						</div>
 					</div>
 				</div>
-			</div>
 		</>
 	);
 }
