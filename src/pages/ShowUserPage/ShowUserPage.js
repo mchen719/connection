@@ -1,51 +1,57 @@
-import { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import AboutMe from '../../components/AboutMe/AboutMe'
-import ProDetails from '../../components/ProDetails/ProDetails'
-import SideBar from '../../components/SideBar/SideBar'
-import styles from './ShowUserPage.module.scss'
-import NavBar from '../../components/NavBar/NavBar'
-import * as usersAPI from '../../utilities/users-api'
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import AboutMe from '../../components/AboutMe/AboutMe';
+import ProDetails from '../../components/ProDetails/ProDetails';
+import SideBar from '../../components/SideBar/SideBar';
+import styles from './ShowUserPage.module.scss';
+import NavBar from '../../components/NavBar/NavBar';
+import * as usersAPI from '../../utilities/users-api';
 
-// // note for future use params just works we don't need a string param entry
-// // use effect fetch get user by id route, plug in with params.userId. place that RESPONSE into the state value to use.
-
-// current major issue : we're unable to get the components to populate with the user data of the intended for viewing user.
-// was able to change useState to null which allowed the forms to import/render but the data isn't populating. it seemed like it's no longer storing the foundUser data?
-export default function ShowUserPage ({ user, setUser }) {
-    const {userId} = useParams()
-    const [showUser, setShowUser] = useState(null)
+export default function ShowUserPage({ user, setUser }) {
+    const { userId } = useParams();
+    const [showUser, setShowUser] = useState(null);
+    const [isFriendAdded, setIsFriendAdded] = useState(false);
+    const [showFriendAddedPopup, setShowFriendAddedPopup] = useState(false);
 
     useEffect(() => {
-        async function getUser(){
-
-            const foundUser = await usersAPI.getUserById(userId)
-            setShowUser(foundUser)
+        async function getUser() {
+            const foundUser = await usersAPI.getUserById(userId);
+            setShowUser(foundUser);
         }
-        getUser()
-    }, [])
-    return(
+        getUser();
+    }, [userId]);
+
+    const addFriend = async () => {
+        try {
+            setIsFriendAdded(true);
+            setShowFriendAddedPopup(true);
+        } catch (error) {
+            console.error('Error adding friend:', error);
+        }
+    };
+
+    console.log('showUser:', showUser);
+    console.log('isFriendAdded:', isFriendAdded);
+
+    return (
         <main className={styles.ShowUserPage}>
-            <NavBar
-            user={user}
-            setUser={setUser}
-            />
-            <SideBar
-            user={user}
-            setUser={setUser}
-            />
-            {
-                showUser && <>
-            <AboutMe
-            user={showUser}
-            setUser={setShowUser}
-            />
-            <ProDetails
-            user={showUser}
-            setUser={setShowUser}
-            />
+            <NavBar user={user} setUser={setUser} />
+            <SideBar user={user} setUser={setUser} />
+            {showUser && (
+                <>
+                    <AboutMe user={showUser} setUser={setShowUser} />
+                    <ProDetails user={showUser} setUser={setShowUser} />
+                    < div className={styles.friendButton}>
+                        {!isFriendAdded && (
+                        <button onClick={addFriend}>Add Friend</button>
+                    )}</div>
                 </>
-            }
+            )}
+            {showFriendAddedPopup && (
+                <div className={styles.popup}>
+                    Friend added successfully!
+                </div>
+            )}
         </main>
-    )
+    );
 }
