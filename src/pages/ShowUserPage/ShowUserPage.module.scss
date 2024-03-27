@@ -1,0 +1,20 @@
+div {
+    color: white;
+    font-size: x-large;
+}
+
+.ShowUserPage {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    label {
+        border: solid 1px white;
+        padding: 1rem;
+        margin: .5rem;
+        border-radius: 1vmin;
+        background-color: rgb(22, 102, 197);
+        color: white;
+    }
+}
