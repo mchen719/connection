@@ -7,8 +7,8 @@ import styles from './ShowUserPage.module.scss'
 import NavBar from '../../components/NavBar/NavBar'
 import * as usersAPI from '../../utilities/users-api'
 
-// note for future use params just works we don't need a string param entry
-// use effect fetch get user by id route, plug in with params.userId. place that RESPONSE into the state value to use.
+// // note for future use params just works we don't need a string param entry
+// // use effect fetch get user by id route, plug in with params.userId. place that RESPONSE into the state value to use.
 
 // current major issue : we're unable to get the components to populate with the user data of the intended for viewing user.
 // was able to change useState to null which allowed the forms to import/render but the data isn't populating. it seemed like it's no longer storing the foundUser data?

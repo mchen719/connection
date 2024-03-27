@@ -1,5 +1,5 @@
 import styles from './SideBar.module.scss';
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 export default function SideBar({ user }) {
 	const [showConnections, setShowConnections] = useState(false)
