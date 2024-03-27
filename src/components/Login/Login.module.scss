@@ -7,6 +7,7 @@
 }
 body{
     background-color: #080710;
+    font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
 }
 .body{
     background-color: #080710;
@@ -90,7 +91,7 @@ input{
 ::placeholder{
     color: #e5e5e5;
 }
-button{
+.loginBtn{
     margin-top: 50px;
     width: 100%;
     background-color: #ffffff;
@@ -102,7 +103,7 @@ button{
     cursor: pointer;
 }
 
-button:hover {
+.loginBtn:hover {
     background-color: rgb(12, 99, 166);
     color: white;
 }

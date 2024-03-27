@@ -10,7 +10,7 @@ export default function HomePage(user, setUser) {
 	const [posts, setPosts] = useState([]);
 	useEffect(() => {
 		async function fetchPosts() {
-			const foundPosts = await PostAPI.getAllPosts(PostFeed);
+			const foundPosts = await PostAPI.getAllPosts();
 			console.log('These are the posts' + foundPosts);
 			setPosts(foundPosts);
 		}
@@ -19,31 +19,21 @@ export default function HomePage(user, setUser) {
 
 	return (
 		<>
-			<h1>TEST HOMEPAGE TEXT </h1>
-			<NavBar user={user} setUser={setUser} />
-
-			<div className="mainPage">
-				<div>
-					<NewPost />
-
-					<PostFeed user={user} posts={posts} />
+			<div className={styles.HomePage}>
+				<NavBar user={user} setUser={setUser} />
+				<div className="mainPage">
+					<div>
+						<NewPost />
+						<h1>Post Page</h1>
+						<div className={styles.PostFeed}>
+							<PostFeed user={user} posts={posts} />
+						</div>
+						<div className={styles.SideBar}>
+							<SideBar user={user} setUser={setUser} />
+						</div>
+					</div>
 				</div>
-
-				<SideBar user={user} setUser={setUser} />
 			</div>
 		</>
 	);
 }
-// useEffect(() => {
-// 	const fetchPosts = async () => {
-// 		const res = await fetch('/api/posts/' + user._id);
-// 		const data = await res.json();
-// 		console.log(data);
-// 		// setPosts(
-// 		// 	data.sort((p1, p2) => {
-// 		// 		return new Date(p2.createdAt) - new Date(p1.createdAt);
-// 		// 	})
-// 		// );
-// 	};
-// 	fetchPosts();
-// }, []);
