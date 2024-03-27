@@ -26,7 +26,7 @@ const routes = [
 	{
 		Component: ShowUserPage,
 		key: 'ShowUserPage',
-		path: '/profile/:id'
+		path: '/profile/:userId'
 	}
 
 ];
