@@ -58,7 +58,7 @@ const CreateJobForm = ({ setJobListings, onClose }) => {
         <div>
             <h2>Create a Job Post</h2>
             <div>
-                <form onSubmit={handleSubmit}>
+                <form className={styles.jobForm} onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="title">Title</label>
                         <input
