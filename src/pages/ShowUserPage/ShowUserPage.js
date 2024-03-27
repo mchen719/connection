@@ -30,28 +30,35 @@ export default function ShowUserPage({ user, setUser }) {
         }
     };
 
-    console.log('showUser:', showUser);
-    console.log('isFriendAdded:', isFriendAdded);
 
     return (
         <main className={styles.ShowUserPage}>
             <NavBar user={user} setUser={setUser} />
             <SideBar user={user} setUser={setUser} />
+
+            <div className={styles.content}>
+            <div className={styles.subContent}>
             {showUser && (
-                <>
+                <div className={styles.testHolder}>
                     <AboutMe user={showUser} setUser={setShowUser} />
-                    <ProDetails user={showUser} setUser={setShowUser} />
-                    < div className={styles.friendButton}>
+                    <div className={styles.friendZone}>
                         {!isFriendAdded && (
-                        <button onClick={addFriend}>Add Friend</button>
-                    )}</div>
-                </>
-            )}
-            {showFriendAddedPopup && (
+                        <button className={styles.friendButton} onClick={addFriend}>Add Friend</button>
+                    )}
+                    </div>
+                    {showFriendAddedPopup && (
                 <div className={styles.popup}>
                     Friend added successfully!
                 </div>
             )}
+
+                    <ProDetails user={showUser} setUser={setShowUser} />
+
+                </div>
+            )}
+            </div>
+            </div>
+
         </main>
     );
 }
