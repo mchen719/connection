@@ -4,11 +4,13 @@ div {
 }
 
 .ShowUserPage {
-    margin: 2rem;
+    background-image: linear-gradient(white, rgb(22, 102, 197));
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     text-align: left;
+
     label {
         border: solid 1px white;
         padding: 1rem;
@@ -17,4 +19,45 @@ div {
         background-color: rgb(22, 102, 197);
         color: white;
     }
+}
+
+.subContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;}
+
+.showUser {
+    display: flex;
+    flex-direction: column;
+}
+
+.friendButton {
+    margin: .5rem;
+    padding: .5rem;
+    border-radius: 1vmin;
+}
+
+
+
+.popup {
+    margin: .5rem;
+    padding: .5rem;
+}
+
+
+.testHolder {
+    display: flec;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
