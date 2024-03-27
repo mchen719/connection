@@ -22,7 +22,7 @@ export default function HomePage(user, setUser) {
 			<NavBar user={user} setUser={setUser} />
 			<div className="mainPage">
 				<div>
-					<NewPost />
+					{/* <NewPost /> */}
 
 					<PostFeed user={user} posts={posts} />
 				</div>

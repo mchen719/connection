@@ -37,6 +37,7 @@ export default function ProfilePage({ user, setUser }) {
     }, []);
 
 
+
     useEffect(() => {
         async function fetchUsers() {
             const users = await usersAPI.getAllUsers();
