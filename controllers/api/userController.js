@@ -86,7 +86,6 @@ const dataController = {
       const user = await User.findById(userId);
       user.connections.push(friendId);
       await user.save();
-
       res.status(200).json({ message: "Friend added successfully" });
     } catch (error) {
       res.status(400).json({ msg: error.message });
@@ -116,3 +115,4 @@ function createJWT(user) {
     { expiresIn: '24h' }
   )
 }
+

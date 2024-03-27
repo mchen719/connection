@@ -3,10 +3,23 @@ div {
     font-size: x-large;
 }
 
+.navBar {
+    position: fixed;
+}
 .ProfilePage {
     margin: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: left;
+    overflow-y: scroll;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+}
+.proDetails {
+    overflow-y: scroll;
+
 }
