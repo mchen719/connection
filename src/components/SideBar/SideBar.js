@@ -1,5 +1,3 @@
-import { useState } from 'react';
-import AboutMeSideBar from '../AboutMeSideBar/AboutMeSideBar.js';
 import styles from './SideBar.module.scss';
 import { useState, useEffect } from 'react'
 
@@ -18,7 +16,7 @@ export default function SideBar({ user }) {
 			<div className={styles.content}>
 				<h1>{user.name}</h1>
 				<h2>Contact info: {user.email}</h2>
-				<div className={styles.connectionsButton} onClick={() => setShowConnections(!showConnections)}>Connections: {user.connections.length}</div>
+				{/* <div className={styles.connectionsButton} onClick={() => setShowConnections(!showConnections)}>Connections: {user.connections.length}</div> */}
 				{showConnections ? user.connections.map(connection => <div className={styles.connection}> connection.name </div>) : null }
 			</div>
 		</div>
