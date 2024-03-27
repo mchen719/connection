@@ -55,7 +55,7 @@ const CreateJobForm = ({ setJobListings, onClose }) => {
     };
 
     return (
-        <div>
+        <div className={styles.createJobForm}>
             <h2>Create a Job Post</h2>
             <div>
                 <form onSubmit={handleSubmit}>
