@@ -23,7 +23,6 @@ function UserEdit({ user, setUser, showUserForm, setShowUserForm }) {
         // Prevent form from being submitted to the server
         evt.preventDefault();
         try {
-
             const user = await usersService.update(userData, id);
             console.log(user)
             setUser(user);
@@ -38,6 +37,23 @@ function UserEdit({ user, setUser, showUserForm, setShowUserForm }) {
             <input type="text" name="name" value={userData.name} onChange={handleChange} required />
             <label>Email</label>
             <input type="text" name="email" value={userData.email} onChange={handleChange} required />
+            <button type="submit">SAVE CHANGES</button>
+        </form>
+        <p className="error-message">&nbsp;{error}</p>
+    </>
+  )
+}
+
+export default UserEdit
+
+            {/* <label>experience</label>
+                {user?.experience?.map((item) => {
+                    return(<div key={item._id}>
+                        <input type='text' name='experience' value={userData.experience.title} onChange={handleChange}/>
+                        <input type='text' name='experience' value={userData.experience.company} onChange={handleChange}/>
+                        
+                    </div>)
+                })} */}
             {/* <div>
                 <label>experience</label>
                 {user?.experience?.map((item) => {
@@ -47,8 +63,6 @@ function UserEdit({ user, setUser, showUserForm, setShowUserForm }) {
                     </div>)
                 })}
             </div> */}
-            <button type="submit">SAVE CHANGES</button>
-        </form>
         {/* <div className='form'>
             <label>Name</label>
             <input type="text" name="name" defaultValue={user.name} value={userData.name} onChange={handleChange} required />
@@ -67,11 +81,5 @@ function UserEdit({ user, setUser, showUserForm, setShowUserForm }) {
                 <input/>
             </div>
         </div> */}
-        <p className="error-message">&nbsp;{error}</p>
-    </>
-  )
-}
-
-export default UserEdit
 
 
