@@ -17,11 +17,9 @@ export function update(data, id) {
 // or BASE_URL, 'GET' ???
 // or BASE_URL, 'GET' ???
 
-export const getAllUsers = () => {
+  export const getAllUsers = () => {
     return sendRequest(BASE_URL)
 }
-export default function getUserById(id) {
-    return sendRequest(`${BASE_URL}/${id}`, 'GET', id);
+export function getUserById(id) {
+    return sendRequest(`${BASE_URL}/${id}`);
 }
-
-
