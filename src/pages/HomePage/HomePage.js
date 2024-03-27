@@ -20,16 +20,21 @@ export default function HomePage({user, setUser}) {
 
 	return (
 		<>
-			<NavBar user={user} setUser={setUser} />
-			<div className="mainPage">
-				<div>
-					<NewPost fetchPosts={fetchPosts}/>
-
-					<PostFeed user={user} posts={posts} />
+			<div className={styles.HomePage}>
+				<NavBar user={user} setUser={setUser} />
+				<div className="mainPage">
+					<div>
+						<div className={styles.SideBar}>
+							<SideBar user={user} setUser={setUser} />
+						</div>
+						<NewPost fetchPosts= {fetchPosts}/>
+						<div className={styles.PostFeed}>
+							<PostFeed user={user} posts={posts} />
+						</div>
+						
+					</div>
 				</div>
-				<SideBar user={user} setUser={setUser} />
 			</div>
 		</>
 	);
 }
-
