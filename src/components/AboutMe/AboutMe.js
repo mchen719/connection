@@ -12,20 +12,17 @@ export default function AboutMe({ user, setUser }) {
                     <img src={user.profilePicture} className={styles.prophoto} />
                 </div>
                 <div className={styles.cardtext}>
-                    <div className={styles.portada}>
-
-                    </div>
                     <div className={styles.titletotal}>
                         <div className={styles.title}>Software Engineer</div>
                         <h2>{user.name}</h2>
 
-                        <div className={styles.desc}>{user.summary}lorem ipsims wef weibwec</div>
-                        <div className="actions">
-                            {showEditUser ? <UserEdit user={user} setUser={setUser} /> : ""}
+                        <div className={styles.desc}>{user.summary}</div>
                             <button className={styles.editBtn} onClick={() => setEditUser(!showEditUser)}>
                                 {showEditUser ? "Exit" : "Edit Profile"}
                             </button>
-                        </div>
+                            {showEditUser ? <UserEdit user={user} setUser={setUser} /> : ""}
+                        
+                        
                     </div>
                 </div>
             </div>
