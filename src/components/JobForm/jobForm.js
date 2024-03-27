@@ -34,14 +34,6 @@ const CreateJobForm = ({ setJobListings, onClose }) => {
             console.log('Creating job...');
             await sendRequest('/api/jobs', 'POST', formData);
             console.log('Job created successfully');
-
-            // Fetch the updated job listings after creating the job
-            const updatedJobs = await fetchUpdatedJobListings();
-            setJobListings(updatedJobs);
-
-            onClose();
-            // setShowCreateForm(false);
-
         } catch (error) {
             console.error('Error creating job:', error);
         }
@@ -102,8 +94,7 @@ const CreateJobForm = ({ setJobListings, onClose }) => {
                     </div>
                     <div>
                         <label htmlFor="description">Description</label>
-                        <input
-                        type="text"
+                        <textarea
                             id="description"
                             name="description"
                             value={formData.description}
@@ -111,7 +102,7 @@ const CreateJobForm = ({ setJobListings, onClose }) => {
                             placeholder="Enter job description"
                         />
                     </div>
-                    <button type="submit" onSubmit={handleSubmit}>Create Job</button>
+                    <button type="submit">Create Job</button>
                 </form>
             </div>
         </div>

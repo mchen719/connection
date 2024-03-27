@@ -1,7 +1,6 @@
 import styles from './NavBar.module.scss'
 import { Link, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react'
-import SearchBar from '../../components/SearchBar/SearchBar'
 import Logo from '../Logo/Logo'
 import UserLogOut from '../UserLogout/UserLogout'
 
