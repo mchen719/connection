@@ -63,8 +63,8 @@ const dataController = {
   },
   async show(req, res) {
     try {
-      const user = await User.findOne({ _id: req.params.id });
-      res.status(200).json(user);
+      const user = await User.findOne({ _id: req.params.id }).populate("experience education skills posts");
+      res.status(200).json(user)
     } catch (error) {
       res.status(400).json({ msg: error.message });
     }
@@ -115,4 +115,3 @@ function createJWT(user) {
     { expiresIn: '24h' }
   )
 }
-
