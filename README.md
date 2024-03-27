@@ -94,11 +94,15 @@ npm run dev
 <h1>Screenshots</h1>
 <h2>Login Screen</h2>
 <img src='./public/img/loginPage.png'/>
+<br/>
 <h2>Home Page</h2>
 <img src='./public/img/homePage.png'/>
+<br/>
 <h2>Profile Page</h2>
 <img src='./public/img/profilePage.png'/>
+<br/>
 <h2>Show User Page</h2>
 <img src='./public/img/showUsersPage.png'/>
+<br/>
 <h2>Jobs Page</h2>
 <img src='./public/img/jobsPage.png'/>
