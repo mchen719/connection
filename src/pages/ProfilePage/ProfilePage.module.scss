@@ -7,19 +7,25 @@ div {
     position: fixed;
 }
 .ProfilePage {
-    margin: 2rem;
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
     align-items: center;
     text-align: left;
     overflow-y: scroll;
+    gap: 2rem;
 }
 
 .body {
     display: flex;
     flex-direction: row;
+    margin: 2rem;
 }
 .proDetails {
     overflow-y: scroll;
 
+}
+
+.aboutMe {
+    margin: 2rem;
 }
