@@ -19,6 +19,7 @@ export default function NewPost(props) {
 
 	return (
 		<>
+
 			<button onClick={handleButtonClick}>Create a Post</button> {/* Button to toggle the form */}
 			{showForm && ( // Render the form if showForm is true
 				<div className={styles.container}>
