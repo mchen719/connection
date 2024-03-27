@@ -35,10 +35,7 @@ export default function ProfilePage({ user, setUser }) {
         }
         fetchUsers();
     }, []);
-  
-    const handleSearch = () => {
-        return !searchInput ? userListings : userListings.filter(userListing => userListing.name.toLowerCase().includes(searchInput.toLowerCase().trim()))
-    }
+
 
     useEffect(() => {
         async function fetchUsers() {
@@ -63,7 +60,7 @@ export default function ProfilePage({ user, setUser }) {
 
             {showUserForm ? <UserEdit user={user} setUser={setUser} onSubmit={() => setShowUserForm(!showUserForm) }/> : null }
             <label>Search the network for new connections below!</label>
-            />
+
             <label>Search the network for new connections below!</label>
             <SearchBar
                 searchInput={searchInput}
