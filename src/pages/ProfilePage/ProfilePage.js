@@ -53,14 +53,14 @@ export default function ProfilePage({ user, setUser }) {
     return (
         <main className={styles.ProfilePage}>
             <NavBar className={styles.navBar} user={user} setUser={setUser} />
-            <AboutMe className={styles.aboutMe} user={user} setUser={setUser} />
             <div className={styles.body}>
+            <AboutMe className={styles.aboutMe} user={user} setUser={setUser} />
             <ProDetails className={styles.proDetails} user={user} setUser={setUser} />
             </div>
 
             {showUserForm ? <UserEdit user={user} setUser={setUser} onSubmit={() => setShowUserForm(!showUserForm) }/> : null }
             <label>Search the network for new connections below!</label>
-            <label>Search the network for new connections below!</label>
+    
             <SearchBar
                 searchInput={searchInput}
                 setSearchInput={setSearchInput}
