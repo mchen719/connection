@@ -15,6 +15,7 @@ export function update(data, id) {
 
 // Below : for search bar needs
 // or BASE_URL, 'GET' ???
+// or BASE_URL, 'GET' ???
 
 export const getAllUsers = () => {
     return sendRequest(BASE_URL)
@@ -22,3 +23,5 @@ export const getAllUsers = () => {
 export default function getUserById(id) {
     return sendRequest(`${BASE_URL}/${id}`, 'GET', id);
 }
+
+

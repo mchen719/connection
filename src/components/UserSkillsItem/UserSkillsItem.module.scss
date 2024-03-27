@@ -1,18 +1,21 @@
+
 .UserSkillsItem {
-    border: solid 2px purple;
-    margin: .25rem;
-    padding: .25rem;
-}
-
-.name {
-    margin: .25rem;
-    padding: .25rem;
-    border: solid 1px white;
+    border: solid 1px pink;
+    padding: .5rem;
+    margin: .5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(22, 102, 197);
+    border-radius: 1vmin;
 }
 
 
-.endorsements {
+
+.data {
     margin: .25rem;
     padding: .25rem;
     border: solid 1px white;
+    z-index: 1;
+    background-color: lightgray;
+    color: black;
+    border-radius: 1vmin;
 }

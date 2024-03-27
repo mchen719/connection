@@ -7,7 +7,7 @@ import styles from './SearchBar.module.scss'
 
 // must get search input to correclty pass down. Parent will be the page.
 
-export default function SearchBar({
+export default function SearchBar({ 
     searchInput,
     setSearchInput
 }){
@@ -31,15 +31,15 @@ export default function SearchBar({
       */
 
     return (
-        <div className={styles.searchData}>
-            <div className={styles.searchbar}>
-        <input className={styles.search}
-            type="text"
-            value={searchInput}
-            placeholder="Search..."
-            onChange={e => setSearchInput(e.target.value)} />
-            </div>
-    </div>
+      <div className={styles.searchData}>
+          <div className={styles.searchbar}>
+            <input className={styles.search}
+              type="text"
+              value={searchInput}
+              placeholder="Search..."
+              onChange={e => setSearchInput(e.target.value)} />
+          </div>
+      </div>
 
     )
 }
