@@ -3,9 +3,12 @@
 
 <h3>Live Deployment Link: </h3>
 
-<a href="connections.mattchen.me">Connections - a Linkedin Alternative</a>
+<a href="https://connections.mattchen.me">Connections - a Linkedin Alternative</a> 
 <br>
-
+<div>Purpose of application: "For the people who agree that linkedin just feels kinda gross and a second option would be nice."</div>
+<div>Trello Board Link: https://trello.com/b/xOZueoOA linkedinclone-group </div>
+<div>ERD Mockups: https://lucid.app/lucidchart/9d300fc8-551c-4d9e-8eaf-b29a1a9ad3f1/edit?page=0_0# </div>
+<div>Link to these presentation deck notes: https://docs.google.com/document/d/1--KriUyahZxFxPvrh1RJT739USgFGF91hNr-ooYyFZ0/edit </div>
 <h4>Main Concept: </h4>
 <div>As a user, I want to be able to make and search job postings on this professional social networking app. I want to be able to manage my account, view other users' profiles, make and view posts, and make a lasting 'connection' with people who I'd like to add to my network. I want to be able to converse with anyone on the app through live chat messaging.</div>
 
@@ -68,10 +71,22 @@ npm run seedDeleter
 <h4>Server running instructions: </h4>
 
 <p>To run the application on dev server: </p>
+
 ```
 npm run dev
 ```
 
+<br>
+<div>Explanation of technologies used: MongoDB, Express, Node JS, React, Git/github, Digital Ocean</div?>
+<div>Full stack RESTful application featuring full CRUD functionality on a live deployed server.</div>
+
+<div>Future enhancements planned:</div>
+<ul>
+    <li>Live chat messaging</li>
+    <li>Viewing the array of connections made and allowing clickability to user show profile pages therein </li>
+    <li>Allowing identity of poster to display on pages. </li>
+    <li>Allow additional styling.</li>
+</ul>
 
 <h3>Developed by: </h3>
 <ul>
