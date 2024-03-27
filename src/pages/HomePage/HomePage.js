@@ -8,12 +8,13 @@ import * as PostAPI from '../../utilities/post-api';
 
 export default function HomePage(user, setUser) {
 	const [posts, setPosts] = useState([]);
+
+	async function fetchPosts() {
+		const foundPosts = await PostAPI.getAllPosts(PostFeed);
+		console.log('These are the posts' + foundPosts);
+		setPosts(foundPosts);
+	}
 	useEffect(() => {
-		async function fetchPosts() {
-			const foundPosts = await PostAPI.getAllPosts(PostFeed);
-			console.log('These are the posts' + foundPosts);
-			setPosts(foundPosts);
-		}
 		fetchPosts();
 	}, []);
 
@@ -22,12 +23,11 @@ export default function HomePage(user, setUser) {
 			<NavBar user={user} setUser={setUser} />
 			<div className="mainPage">
 				<div>
-					{/* <NewPost /> */}
+					<NewPost fetchPosts={fetchPosts}/>
 
 					<PostFeed user={user} posts={posts} />
 				</div>
 				<SideBar user={user} setUser={setUser} />
-
 			</div>
 		</>
 	);

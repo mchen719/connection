@@ -49,4 +49,3 @@ const AppRouter = () => {
 
 export default AppRouter;
 
-// 		<AuthPage setUser={setUser}/>
