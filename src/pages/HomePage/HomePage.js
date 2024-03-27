@@ -19,6 +19,7 @@ export default function HomePage(user, setUser) {
 
 	return (
 		<>
+<<<<<<< HEAD
 			<div className={styles.HomePage}>
 				<h1>TEST HOMEPAGE TEXT </h1>
 				<NavBar user={user} setUser={setUser} />
@@ -26,26 +27,25 @@ export default function HomePage(user, setUser) {
 				<div className="mainPage">
 					<div>
 						<NewPost />
+=======
+			<NavBar user={user} setUser={setUser} />
+			<div className="mainPage">
+				<div>
+					<NewPost />
+>>>>>>> 8ba03b9907f4c735d00ac1afe3faf3ae147d3feb
 
 						<PostFeed user={user} posts={posts} />
 					</div>
 
 					<SideBar user={user} setUser={setUser} />
 				</div>
+<<<<<<< HEAD
+=======
+				<SideBar user={user} setUser={setUser} />
+
+>>>>>>> 8ba03b9907f4c735d00ac1afe3faf3ae147d3feb
 			</div>
 		</>
 	);
 }
-// useEffect(() => {
-// 	const fetchPosts = async () => {
-// 		const res = await fetch('/api/posts/' + user._id);
-// 		const data = await res.json();
-// 		console.log(data);
-// 		// setPosts(
-// 		// 	data.sort((p1, p2) => {
-// 		// 		return new Date(p2.createdAt) - new Date(p1.createdAt);
-// 		// 	})
-// 		// );
-// 	};
-// 	fetchPosts();
-// }, []);
+

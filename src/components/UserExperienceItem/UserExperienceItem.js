@@ -16,12 +16,12 @@ export default function UserExperienceItem({userExperienceItem}){
     return (
         <div className={styles.UserExperienceItem}>
             <div>
-                <div className={styles.title}>Job Title: {userExperienceItem.title}</div>
-                <div className={styles.company}>Company Name: {userExperienceItem.company}</div>
-                <div className={styles.location}>Location: {userExperienceItem.location}</div>
-                <div className={styles.startDate}>Start Date: {userExperienceItem.startDate}</div>
-                <div className={styles.endDate}>End Date: {userExperienceItem.endDate}</div>
-                <div className={styles.description}>Job Description: {userExperienceItem.description}</div>
+                <div className={styles.data}>Job Title: {userExperienceItem.title}</div>
+                <div className={styles.data}>Company Name: {userExperienceItem.company}</div>
+                <div className={styles.data}>Location: {userExperienceItem.location}</div>
+                <div className={styles.data}>Start Date: {userExperienceItem.startDate}</div>
+                <div className={styles.data}>End Date: {userExperienceItem.endDate}</div>
+                <div className={styles.data}>Job Description: {userExperienceItem.description}</div>
             </div>
         </div>
     )

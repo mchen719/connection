@@ -9,10 +9,18 @@ import * as jobsAPI from '../../utilities/jobs-api';
 import CreateJobForm from '../../components/JobForm/JobForm';
 
 const JobPage = ({ user, setUser }) => {
+<<<<<<< HEAD
 	const { jobId } = useParams();
 	const [jobListings, setJobListings] = useState([]);
 	const [isLoading, setIsLoading] = useState(true);
 	const [searchInput, setSearchInput] = useState('');
+=======
+    const { jobId } = useParams();
+    const [jobListings, setJobListings] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    const [searchInput, setSearchInput] = useState('')
+    const [showCreateForm, setShowCreateForm] = useState(false)
+>>>>>>> 8ba03b9907f4c735d00ac1afe3faf3ae147d3feb
 
 	const handleSearch = () => {
 		return !searchInput
@@ -37,6 +45,7 @@ const JobPage = ({ user, setUser }) => {
 		return <div>Loading...</div>;
 	}
 
+<<<<<<< HEAD
 	console.log('Number of job listings:', jobListings.length);
 
 	return (
@@ -55,6 +64,28 @@ const JobPage = ({ user, setUser }) => {
 			<CreateJobForm user={user} setUser={setUser} />
 		</div>
 	);
+=======
+    return (
+        <div className={styles.jobPage}>
+            <NavBar user={user} setUser={setUser} />
+            <div className={styles.topSpace}>
+                <div className={styles.nextTopSpace}>
+                    <h1>Job Listings</h1>
+                    <h3>Search our catalogue of jobs below!</h3>
+                    <SearchBar
+                    searchInput={searchInput}
+                    setSearchInput={setSearchInput}
+                    jobListings={jobListings}
+                    />
+                </div>
+                <SideBar user={user} setUser={setUser} />
+            </div>
+            <JobListings jobListings={handleSearch()} />
+            <div className={styles.createFormToggle} onClick={() => setShowCreateForm(!showCreateForm)}>Create a new job posting here!</div>
+            {showCreateForm ? <CreateJobForm user={user} setUser={setUser} /> : null}
+        </div>
+    );
+>>>>>>> 8ba03b9907f4c735d00ac1afe3faf3ae147d3feb
 };
 
 export default JobPage;
