@@ -2,7 +2,7 @@ import { useState } from 'react';
 import sendRequest from '../../utilities/send-request';
 import styles from './NewPost.module.scss';
 
-export default function NewPost() {
+export default function NewPost(props) {
 	const [formData, setFormData] = useState({
 		title: '',
 		description: ''
@@ -26,7 +26,10 @@ export default function NewPost() {
 						className={styles.form}
 						onSubmit={(e) => {
 							e.preventDefault();
-							sendRequest('/api/posts', 'POST', formData);
+							sendRequest('/api/posts', 'POST', formData).then(() => {
+								props.fetchPosts();
+							});
+							setShowForm(false);
 						}}
 					>
 						<div>
