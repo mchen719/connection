@@ -6,7 +6,7 @@ import SideBar from '../../components/SideBar/SideBar.js';
 import styles from './HomePage.module.scss';
 import * as PostAPI from '../../utilities/post-api';
 
-export default function HomePage(user, setUser) {
+export default function HomePage({user, setUser}) {
 	const [posts, setPosts] = useState([]);
 
 	async function fetchPosts() {
