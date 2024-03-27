@@ -3,7 +3,7 @@ import sendRequest from '../../utilities/send-request';
 import styles from './JobForm.module.scss'
 import * as jobsAPI from '../../utilities/jobs-api';
 
-const CreateJobForm = ({ user }) => {
+const CreateJobForm = ({ setJobListings, onClose }) => {
     const [formData, setFormData] = useState({
         title: 'Sample Title',
         company: 'Sample Company',
@@ -39,8 +39,23 @@ const CreateJobForm = ({ user }) => {
         }
     };
 
+    // Function to fetch updated job listings
+    const fetchUpdatedJobListings = async () => {
+        try {
+            const response = await fetch('/api/jobs');
+            if (!response.ok) {
+                throw new Error('Failed to fetch job listings');
+            }
+            const jobListings = await response.json();
+            return jobListings;
+        } catch (error) {
+            console.error('Error fetching job listings:', error);
+            return [];
+        }
+    };
+
     return (
-        <div>
+        <div className={styles.createJobForm}>
             <h2>Create a Job Post</h2>
             <div>
                 <form onSubmit={handleSubmit}>
