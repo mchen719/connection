@@ -5,11 +5,10 @@
     margin-top: -35px;
     padding-top: 10px;
     display: flex;
-    position: fixed;
     align-items: center;
     justify-content: center;
     background-color: #080710;
-
+    z-index: 1;
 }
 
 .logo {
@@ -35,8 +34,4 @@
     justify-content: flex-end;
     text-align: center;
     align-items: center;
-}
-
-.logout {
-    
 }
