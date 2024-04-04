@@ -24,8 +24,8 @@ const seed = async () => {
     await User.deleteMany({})
     const usersSeed = await User.create([
         {
-            name: "Test User1",
-            email: "testUser@email.com",
+            name: "Kevin Jacobson",
+            email: "kevinJay@email.com",
             password: process.env.SEED_PASSWORD,
             profilePicture: '/img/profilePicture1.jpeg',
             coverPhoto: '/img/CoverPicture.jpg',
@@ -39,10 +39,10 @@ const seed = async () => {
 
         },
         {
-            name: "Test2 User2",
-            email: "testUser2@email.com",
+            name: "Cynthia Chatterson",
+            email: "ccc@email.com",
             password: process.env.SEED_PASSWORD,
-            profilePicture: '/img/profilePicture3.png',
+            profilePicture: '/img/profilePictureTheresa.jpeg',
             coverPhoto: '/img/CoverPicture.jpg',
             summary: "I'm competent and you should hire me.",
             experience: [],
@@ -53,7 +53,7 @@ const seed = async () => {
             posts: []
         },
         {
-            name: "Arthur Clone",
+            name: "Arthur Morgan",
             email: "ceo@me.com",
             password: process.env.SEED_PASSWORD,
             profilePicture: '/img/profilePicture4.jpeg',
@@ -68,12 +68,12 @@ const seed = async () => {
 
         },
         {
-            name: "Best Tester",
-            email: "besttest@email.com",
+            name: "Penelope Tarwell",
+            email: "professor@email.com",
             password: process.env.SEED_PASSWORD,
             profilePicture: '/img/profilePicture5.jpeg',
             coverPhoto: '/img/CoverPicture.jpg',
-            summary: "I'm 2LEET2YEET! You wish you were this good. Do you even lift, bro?",
+            summary: "You wish you were this good at life. Do you even lift, bro?",
             experience: [],
             education: [],
             skills: [],
@@ -83,10 +83,10 @@ const seed = async () => {
 
         },
         {
-            name: "Test5 User5",
-            email: "testUser5@email.com",
+            name: "Blake Lively",
+            email: "blakelive@email.com",
             password: process.env.SEED_PASSWORD,
-            profilePicture: '/img/profilePicture2.jpeg',
+            profilePicture: '/img/profilepicture2.jpeg',
             coverPhoto: '/img/CoverPicture.jpg',
             summary: "I love working so much, it's all I ever want to talk about! I'm passionate about hobbies outside of work that also directly involve work because that's modern society for you...",
             experience: [],
@@ -98,9 +98,10 @@ const seed = async () => {
 
         },
         {
-            name: "Test6 User6",
-            email: "testUser6@email.com",
+            name: "Mark Masters",
+            email: "mark@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePictureBryce.jpeg',
             coverPhoto: '/img/CoverPicture.jpg',
             summary: "I think my experience is summary enough.",
             experience: [],
@@ -112,9 +113,10 @@ const seed = async () => {
 
         },
         {
-            name: "Test7 User7",
-            email: "testUser7@email.com",
+            name: "Trevor Winston",
+            email: "twins@email.com",
             password: process.env.SEED_PASSWORD,
+            profilePicture: '/img/profilePicMike.jpeg',
             coverPhoto: '/img/CoverPicture.jpg',
             summary: "I'm not a fan of social media...",
             experience: [],

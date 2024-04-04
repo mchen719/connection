@@ -3,7 +3,7 @@
 
 <h3>Live Deployment Link: </h3>
 
-<a href="https://connections.mattchen.me">Connections - a Linkedin Alternative</a> 
+<a href="https://connections.christopherlazariuk.me">Connections - a Linkedin Alternative</a>
 <br>
 <div>Purpose of application: "For the people who agree that linkedin just feels kinda gross and a second option would be nice."</div>
 <div>Trello Board Link: https://trello.com/b/xOZueoOA linkedinclone-group </div>
