@@ -11,16 +11,18 @@ export default function NavBar({ user, setUser }) {
 			<div className={styles.logo}>
 				<Logo />
 			</div>
+			<a className={styles.portfolioLink} href="https://portfolio.christopherlazariuk.me">Portfolio Home</a>
 			<div className={styles.navButtons}>
 				<Link to="/home" className={styles.NavButton}>Home</Link>
 				<Link to="/profile" className={styles.NavButton}>Profile</Link>
 				<Link to="/jobs" className={styles.NavButton}>Jobs</Link>
-			</div>
+
 			<div className={styles.logout}>
 				<UserLogOut
 					user={user}
 					setUser={setUser}
 				/>
+				</div>
 			</div>
 		</div>
 

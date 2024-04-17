@@ -12,19 +12,19 @@ export default function ProDetails({ user, education, experience, skills }) {
         />)
     )
 
-    // const userEducationItems = user.education.map(edu => (
-    //     <UserEducationItem
-    //     userEducationItem={edu}
-    //     key={edu._id}
-    //     /> )
-    // )
+    const userEducationItems = user.education.map(edu => (
+        <UserEducationItem
+        userEducationItem={edu}
+        key={edu._id}
+        /> )
+    )
 
-    // const userSkillsItems = user.skills.map(skill => (
-    //     <UserSkillsItem
-    //     userSkillsItem={skill}
-    //     key={skill._id}
-    //     />)
-    // )
+    const userSkillsItems = user.skills.map(skill => (
+        <UserSkillsItem
+        userSkillsItem={skill}
+        key={skill._id}
+        />)
+    )
     return (
         <div className={styles.ProDetails}>
             <h2>Professional Experience</h2>
@@ -36,7 +36,7 @@ export default function ProDetails({ user, education, experience, skills }) {
               <h3>~No Experience To Show~</h3>
             }
              </div>
-             {/* <h2>Education</h2>
+             <h2>Education</h2>
              <div className={styles.educationContainer}>
             {userEducationItems.length ?
              userEducationItems :
@@ -49,7 +49,7 @@ export default function ProDetails({ user, education, experience, skills }) {
               userSkillsItems :
               <h3>~No Skills To Show~</h3>
             }
-            </div> */}
+            </div>
     </div>
 
     )
